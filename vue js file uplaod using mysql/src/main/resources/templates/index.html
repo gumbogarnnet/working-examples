@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>test image upload</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+
+
+        <div id="app">
+            {{ message }}
+
+            <input type="file" @change="onFileChanged"/>
+            <button @click="onUpload">Upload!</button>
+        </div>
+
+
+        <!-- development version, includes helpful console warnings -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
+        <script>
+var app = new Vue({
+    el: '#app',
+    data() {
+        return {
+            selectedFile: null,
+            message: "working"
+        }
+    },
+    methods: {
+        onFileChanged(event) {
+            this.selectedFile = event.target.files[0]
+        },
+        onUpload() {
+            const formData = new FormData()
+            formData.append('file', this.selectedFile)
+            axios.post('/test', formData)
+            onUploadProgress: progressEvent => {
+            console.log(progressEvent.loaded / progressEvent.total)
+    }
+        },
+        onUpload1() {
+  axios.post('my-domain.com/file-upload', this.selectedFile)
+},
+    },
+})
+
+        </script>
+    </body>
+</html>
