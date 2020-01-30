@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <title>Carousel Template for Bootstrap</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet"/>
+        <!-- Custom styles for this template -->
+        <link href="carousel.css" rel="stylesheet"/>
+    </head>
+    <body style="background-image: url('Library%20Architecture.jpg');">
+        <div id="editmember">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#">Library System</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="library-home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="book.html">Our Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="book-lending.html">Book Lending</a>
+                        </li>
+                    </ul>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" v-model="searchid" aria-label="Search"/>
+                        <button class="btn btn-outline-success my-2 my-sm-0" v-on:click='searchmember()'>Search</button>
+                    </div>
+                </div>
+            </nav>
+            <div class=" container col-md-8 bg-dark text-white" style="opacity: 0.8; margin-top: 40px;">
+                            <div v-show="!show" class="alert alert-success" role="alert">
+ Successfully added a member
+</div>
+                            <div class="row" style=" padding-bottom: 40px;" >
+                                <div class="col-md-8 mb-3" style=" margin-top: 40px;">
+                                    <label for="validationServerUsername">National Identity Number</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupPrepend3">#</span>
+                                        </div>
+                                        <input type="text" v-bind:class="idstyle" id="validationServerUsername" v-model="members.idNumber" placeholder="01-016716-P01" aria-describedby="inputGroupPrepend3" required="" v-on:change='idval()' />
+                                        <div class="invalid-feedback">
+                                            * Please Enter a Valid National Identity Number
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationServer01">Full name</label>
+                                    <input type="text" v-bind:class="firststyle" id="validationServer01" placeholder="full name" v-model="members.name" required="" v-on:change='firstval()'/>
+                                    <div class="invalid-feedback">
+                                        *Please enter your first name
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="validationServer10">Address</label>
+                                <input type="text" v-bind:class="adstyle" id="validationServer10" placeholder="1234 Main St" v-model="members.address" required="" v-on:change='adval()'/>
+                                <div class="invalid-feedback">
+                                    *please enter your address
+                                </div>
+                            </div>
+
+
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <label for="Status">Dept/Field of Study</label>
+                                    <input type="text" v-bind:class="fistyle" id="Status" placeholder="Department of Info Systems" v-model="members.status" v-on:change='fival()' />
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputtype">Membership Type</label>
+                                    <select id="inputtype " v-bind:class="mestyle" v-model=" members.membershipType" v-on:change='meval()'>
+                                        <option >Administration</option>
+                                        <option>Student</option>
+                                        <option>Staff</option>
+                                        <option>External Student</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Enter a valid membership type
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="inputZip">Amount</label>
+                                    <input type="number" v-bind:class="amstyle" id="inputZip " v-model="members.amount" v-on:change='amval()'/>
+                                    <div class="invalid-feedback">
+                                        Value should be a number
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Date">Membership Expiry Date</label>
+                                    <input type="date" class="form-control" id="Date" v-model="members.dateOfExpiry"/>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+
+                                </div>
+                            </div>
+                <button v-show="show" type="button" class="btn btn-primary" v-on:click="saveMember()">Save Member</button>
+                <a href="member-page" >back</a>
+            </div>
+    </div>
+         <script>
+            /*<![CDATA[*/
+            function getUrlVars() {
+                var vars = {};
+                var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                    vars[key] = value;
+                });
+                return vars;
+            }
+             var mytext = getUrlVars()["idNumber"];
+ /*]]>*/
+     </script>
+         <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+        <script src="assets/js/holder.min.js"></script>
+        <script src="assets/js/vue.js"></script>
+        <script src="assets/js/vue-router.js"></script>
+        <script src="assets/js/axios.js"></script>
+
+       
+        <script>
+var memberHome = new Vue({
+    el: '#editmember',
+    data: function () {
+        return{
+            test: mytext,
+            idstyle:"form-control",
+            firststyle:"form-control",
+            laststyle:"form-control",
+            adstyle:"form-control",
+            fistyle:"form-control",
+            mestyle:"form-control",
+            amstyle:"form-control",
+            error: false,
+            show:true,
+            members: [],
+            searchid: "",
+            books: [],
+            idNumber: "",   
+            address: "",
+            amount: "",
+            dateOfExpiry: "",
+            membershipIssueDate: "",
+            membershipType: "",
+            name: "",
+            status: "",
+            edit: [],
+           editUrl:"editmember/",
+            author: "",
+            dateOfArrival: "",
+            price: "",
+            rackNumber: "",
+            quantity: "",
+            subject_code: "",
+
+        }
+
+
+    },
+    methods: {
+        
+        idval() {
+            if (this.members.idNumber == "") {
+                this.idstyle = "form-control is-invalid"
+                console.log("invalid idnumber")
+                this.error=true
+            } else {
+                this.idstyle = "form-control is-valid"
+                
+            }
+        },
+        firstval() {
+            if (this.members.name == "") {
+                this.firststyle = "form-control is-invalid"
+                console.log("invalid firstname")
+                this.error=true
+            } else {
+                this.firststyle = "form-control is-valid"
+                
+            }
+        },
+        
+         adval() {
+            if (this.members.address == "") {
+                this.adstyle = "form-control is-invalid"
+                console.log("invalid address")
+                this.error=true
+            } else {
+                this.adstyle = "form-control is-valid"
+            }
+        },
+        fival() {
+            if (this.members.status== "") {
+                this.fistyle = "form-control is-invalid"
+                console.log("invalid  field / department")
+                this.error=true
+            } else {
+                this.fistyle = "form-control is-valid"
+            }
+        },
+        meval() {
+            if (this.members.membershipType == "") {
+                this.mestyle = "form-control is-invalid"
+                console.log("invalid  field / department")
+                this.error=true
+            } else {
+                this.mestyle = "form-control is-valid"
+            }
+        },
+        amval() {
+            if (this.members.amount == 0) {
+                this.amstyle = "form-control is-invalid"
+                console.log("invalid  amount")
+                this.error=true
+            } else {
+                this.amstyle = "form-control is-valid"
+            }
+        },
+
+       
+       
+
+
+        searchMember() {
+
+            axios
+
+                    .get('/getmemberbyid/' + this.test)
+                    .then(response => (this.members = response.data))
+
+        },
+        saveMember() {
+             this.error = false
+            this.idval()
+            this.fival()
+            this.firstval()
+            this.adval()
+            this.amval()
+            this.meval()
+            
+            if (!this.error) {
+                this.show = false
+                console.log("has no error")
+            console.log(this.idNumber)
+                    axios
+
+                    .post('/createmember', {
+                        idNumber: this.members.idNumber,
+                        name: this.members.name,
+                  
+                        address: this.members.address,
+                        amount: this.members.amount,
+                        dateOfExpiry: this.members.dateOfExpiry,
+                        membershipIssueDate: this.members.membershipIssueDate,
+                        membershipType: this.members.membershipType,
+                        status: this.members.status,
+                    })
+
+                    .catch(error => console.log(error))
+        }
+        },
+    },
+    mounted: function () {
+        this.searchMember();
+
+    }
+
+})
+        </script>
+    </body>
+</html>
