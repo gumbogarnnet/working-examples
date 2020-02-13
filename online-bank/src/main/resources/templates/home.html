@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>User Login</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/starter-template.css" th:href="@{/css/starter-template.css}" rel="stylesheet">
+  </head>
+
+  <body class="bg-light text-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">Online Bank</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="internal">InternalTransfer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="external">ExternalTransfer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="addrecipient">Add/EditRecipient</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="appointments">Appointment</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+     
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+        <a class="nav-link" href="profile">About Me</a>
+      </li>
+       <form th:action="@{/logout}" method="post">
+          <input type="submit"  class="btn btn-link" value="logout"/>             
+      </form>
+  </ul>
+    </span>
+  </div>
+</nav>
+    
+     
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<div class="container" style="margin-top: 40px;">
+	<d iv class="row">
+	<div class="col-md-6">
+		<div style="margin-bottom: 20px;">
+			<div class="bg-success" style="padding:10px;">
+				<h3>Primary Balance:<span class="float-right" th:text="${primary}">$ 2000</span></h3>
+
+			</div>
+			<div class="bg-white" style="padding:5px;"><a href="/primary">View Details<a/></div>
+		</div>
+		<div>
+			<div class="bg-info" style="padding:10px;"><h3>Savings Balance:<span class="float-right" th:text="${savings}">$ 2000</span> </h3></div>
+			<div class="bg-white" style="padding: 5px;"><a href="/savings">View Details<a/></div>
+		</div>
+	</div>
+	<div class="col-md-6">
+     <div class="row ">
+        <div class="col-md-2"></div>
+         <div class="col-md-4 ">
+             <div><h2>Deposit</h2></div>
+             <div ><a  href="/deposit" >Go to Deposit</a></div>
+         </div>
+         <div class="col-md-2"></div>
+         <div class="col-md-4 ">
+              <div><h2>Withdraw</h2></div>
+             <div ><a  href="/withdraw" >Go to withdraw</a></div>
+         </div>
+     </div>   
+    </div>
+</div>
+</div>
+
+
+
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-3.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+  
+
+</body></html>
