@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <title>Carousel Template for Bootstrap</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet"/>
+        <!-- Custom styles for this template -->
+        <link href="carousel.css" rel="stylesheet"/>
+    </head>
+    <body style="background-image: url('Library%20Architecture.jpg');">
+        <div id="member-page">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#">Library System</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="library-home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Members</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="book.html">Our Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="book-lending.html">Book Lending</a>
+                        </li>
+                    </ul>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" v-model="searchid" aria-label="Search"/>
+                        <button class="btn btn-outline-success my-2 my-sm-0" v-on:click='searchmember()'>Search</button>
+                    </div>
+                </div>
+            </nav>
+            <!--   ================================================== -->
+            <!-- Wrap the rest of the page in another container to center all the content. -->
+            <!-- /.container -->
+
+            <div class="container-fluid mt-5">
+                <div class="row">
+                    <div class="col-md-3 shadow-sm  " style="margin-right: 21px;" > 
+                        <div class="sidebar-sticky bg-dark col-md-2 position-fixed" style="opacity: 0.9;">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-white" href="#" > <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                        </svg>
+                                        Member Home <span class="sr-only">(current)</span> </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#" v-on:click="getAllMembers()"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file text-white">
+                                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                        <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        All Members </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                                        <circle cx="9" cy="21" r="1"></circle>
+                                        <circle cx="20" cy="21" r="1"></circle>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                        </svg>
+                                        With Overdues </a>
+                                    <li class="nav-item">
+                                    <a class="nav-link text-white" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                        <polyline points="2 17 12 22 22 17"></polyline>
+                                        <polyline points="2 12 12 17 22 12"></polyline>
+                                        </svg>
+                                        With Books </a>
+                                </li>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link text-white" data-toggle="modal" data-target="#exampleModalScrollable"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                        </svg>
+                                        Add Member </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/pdfallmembersreport"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2">
+                                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                                        </svg>
+                                        Reports </a>
+                                </li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-8 bg-dark text-white" style="opacity: 0.8;">
+                        <h3>Registered Members</h3> 
+                        <table class="table text-white">
+                            <thead> 
+                                <tr> 
+                                    <th>ID&nbsp;</th>
+                                    <th>Name</th> 
+                                    <th>Type</th> 
+                                    <th>Address</th> 
+                                    <th>Registered</th>
+                                    <th>Action</th>
+                                    <th>Del</th>
+                                </tr>                             
+                            </thead>                         
+                            <tbody> 
+                                <tr v-for="(member,index) in members"> 
+
+
+                                    <th scope="row">{{member.idNumber}}</th> 
+                                    <td>{{member.name}}</td> 
+                                    <td>{{member.membershipType}}</td>
+                                    <td>{{member.address}}</td>
+                                    <td>{{member.membershipIssueDate}}</td>
+                                    <td><a v-bind:href="editUrl+member.idNumber"><span class="badge badge-success" >Edit>></span></a></td>
+                                    <td><a href="#"><span v-on:click="deletemember(member.idNumber)" class="badge badge-danger">Delete</span></a></td>
+                                </tr>                             
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Add Member </h5>
+
+                        </div>
+                        <div class="modal-body">
+                            <div v-show="!show" class="alert alert-success" role="alert">
+ Successfully added a member
+</div>
+                            <div class="row">
+                                <div class="col-md-8 mb-3">
+                                    <label for="validationServerUsername">National Identity Number</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupPrepend3">#</span>
+                                        </div>
+                                        <input type="text" v-bind:class="idstyle" id="validationServerUsername" v-model="idNumber" placeholder="01-016716-P01" aria-describedby="inputGroupPrepend3" required="" v-on:change='idval()' />
+                                        <div class="invalid-feedback">
+                                            * Please Enter a Valid National Identity Number
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationServer01">First name</label>
+                                    <input type="text" v-bind:class="firststyle" id="validationServer01" placeholder="First name" v-model="firstName" required="" v-on:change='firstval()'/>
+                                    <div class="invalid-feedback">
+                                        *Please enter your first name
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationServer02">Last name</label>
+                                    <input type="text" v-bind:class="laststyle" id="validationServer02" placeholder="Last name"  v-model="lastName" required="" v-on:change='lastval()'/>
+                                    <div class="invalid-feedback">
+                                        *please enter your last 
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="validationServer10">Address</label>
+                                <input type="text" v-bind:class="adstyle" id="validationServer10" placeholder="1234 Main St" v-model="address" required="" v-on:change='adval()'/>
+                                <div class="invalid-feedback">
+                                    *please enter your address
+                                </div>
+                            </div>
+
+
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <label for="Status">Dept/Field of Study</label>
+                                    <input type="text" v-bind:class="fistyle" id="Status" placeholder="Department of Info Systems" v-model="status" v-on:change='fival()' />
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputtype">Membership Type</label>
+                                    <select id="inputtype " v-bind:class="mestyle" v-model=" membershipType" v-on:change='meval()'>
+                                        <option >Administration</option>
+                                        <option>Student</option>
+                                        <option>Staff</option>
+                                        <option>External Student</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Enter a valid membership type
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="inputZip">Amount</label>
+                                    <input type="number" v-bind:class="amstyle" id="inputZip " v-model="amount" v-on:change='amval()'/>
+                                    <div class="invalid-feedback">
+                                        Value should be a number
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Date">Membership Expiry Date</label>
+                                    <input type="date" class="form-control" id="Date" v-model="dateOfExpiry"/>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button v-show="show" type="button" class="btn btn-primary" v-on:click="saveMember()">Save Member</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--modal end--> 
+        </div>
+        <!-- Bootstrap core JavaScript
+  ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+        <script src="assets/js/holder.min.js"></script>
+        <script src="assets/js/vue.js"></script>
+        <script src="assets/js/vue-router.js"></script>
+        <script src="assets/js/axios.js"></script>
+
+        <script>
+var memberHome = new Vue({
+    el: '#member-page',
+    data: function () {
+        return{
+            firstName: "",
+            lastName: "",
+            test: "working",
+            members: [],
+            searchid: "",
+            books: [],
+            idNumber: "",
+            address: "",
+            amount: "",
+            dateOfExpiry: "",
+            membershipIssueDate: "",
+            membershipType: "",
+            name: "",
+            status: "",
+            edit: [],
+            editUrl: "editmember?idNumber=",
+            author: "",
+            dateOfArrival: "",
+            price: "",
+            rackNumber: "",
+            quantity: "",
+            subject_code: "",
+            
+            idstyle:"form-control",
+            firststyle:"form-control",
+            laststyle:"form-control",
+            adstyle:"form-control",
+            fistyle:"form-control",
+            mestyle:"form-control",
+            amstyle:"form-control",
+            error: false,
+            show:true,
+
+        }
+
+
+    },
+    methods: {
+
+        idval() {
+            if (this.idNumber == "") {
+                this.idstyle = "form-control is-invalid"
+                console.log("invalid idnumber")
+                this.error=true
+            } else {
+                this.idstyle = "form-control is-valid"
+                
+            }
+        },
+        firstval() {
+            if (this.firstName == "") {
+                this.firststyle = "form-control is-invalid"
+                console.log("invalid firstname")
+                this.error=true
+            } else {
+                this.firststyle = "form-control is-valid"
+                
+            }
+        },
+        lastval() {
+            if (this.lastName == "") {
+                this.laststyle = "form-control is-invalid"
+                console.log("invalid lastname")
+                this.error=true
+            } else {
+                this.laststyle = "form-control is-valid"
+            }
+        },
+         adval() {
+            if (this.address == "") {
+                this.adstyle = "form-control is-invalid"
+                console.log("invalid address")
+                this.error=true
+            } else {
+                this.adstyle = "form-control is-valid"
+            }
+        },
+        fival() {
+            if (this.status== "") {
+                this.fistyle = "form-control is-invalid"
+                console.log("invalid  field / department")
+                this.error=true
+            } else {
+                this.fistyle = "form-control is-valid"
+            }
+        },
+        meval() {
+            if (this.membershipType == "") {
+                this.mestyle = "form-control is-invalid"
+                console.log("invalid  field / department")
+                this.error=true
+            } else {
+                this.mestyle = "form-control is-valid"
+            }
+        },
+        amval() {
+            if (this.amount == 0) {
+                this.amstyle = "form-control is-invalid"
+                console.log("invalid  amount")
+                this.error=true
+            } else {
+                this.amstyle = "form-control is-valid"
+            }
+        },
+         
+        deletemember(id, index) {
+
+
+            axios
+                    .delete('/deletemember/' + id)
+
+            this.members.splice(index, 1)
+
+        },
+
+        getAllMembers() {
+            axios
+                    .get('/getallmembers')
+                    .then(response => (this.members = response.data))
+
+
+
+        },
+
+        editMember(id) {
+console.log(id)
+            axios
+                    .get('searchmember/' + id)
+                    .then(response => (this.edit = [response.data]))
+
+            console.log(this.edit.idNumber)
+            this.idNumber = this.edit.idNumber;
+        },
+
+        searchmember() {
+            this.idNumber = this.searchid;
+            axios
+
+                    .get('/getmemberbyid/' + this.idNumber)
+                    .then(response => (this.members = [response.data]))
+
+        },
+        saveMember() {
+            this.error = false
+            this.idval()
+            this.fival()
+            this.firstval()
+            this.adval()
+            this.amval()
+            this.meval()
+            this.lastval()
+            if (!this.error) {
+                this.show = false
+                 axios
+
+                    .post('/createmember', {
+                        idNumber: this.idNumber,
+                        name: this.firstName + " " + this.lastName,
+
+                        address: this.address,
+                        amount: this.amount,
+                        dateOfExpiry: this.dateOfExpiry,
+                        membershipIssueDate: new Date(),
+                        membershipType: this.membershipType,
+                        status: this.status,
+                    })
+
+                    .catch(error => console.log(error))
+            
+                    
+    
+}
+           
+                   
+           
+        },
+    },
+    mounted: function () {
+        this.getAllMembers();
+
+    }
+
+})
+        </script>
+    </body>
+</html>
