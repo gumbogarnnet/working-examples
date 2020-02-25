@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvs</title>
+</head>
+<body>
+  <div id='app'>{{test}}
+<input type="textarea" name="" v-model="test" v-on:change="test2()">
+
+  </div>
+ <canvas id="myCanvas"  style="border:1px solid #000000;">
+</canvas> 
+
+<script type="text/javascript" src="Chart.min.js"></script>
+<script type="text/javascript" src="vue.js"></script>
+<script src="axios.js"></script>
+<script type="text/javascript">
+
+var memberHome = new Vue({
+    el: '#app',
+    data() {
+            return {
+               test: [10, 81, 80, 45, 0, 12, 40, 100],
+               test1:[],
+              
+               
+            }
+        },
+    methods: {
+test2(){
+  var t = [this.test]
+ this.teester(t)
+},
+        
+      gettest(){
+       axios
+       .get('file:///C:/Users/garnnet/Desktop/New%20folder/customs.json') 
+       .then(response => (this.teester(response.data)))
+       },
+
+       teester(te){
+       	console.log("method "+te)
+        this.test = te
+        var ctx = document.getElementById("myCanvas");
+if (ctx) {
+      ctx.height = 500;
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'december'],
+          type: 'line',
+          datasets: [{
+            data: this.test,
+            label: 'Dataset',
+            backgroundColor: 'red',
+            borderColor: 'black',
+          },]
+        },
+        options: {
+          maintainAspectRatio: true,
+          legend: {
+            display: false
+          },
+          layout: {
+            padding: {
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0
+            }
+          },
+          responsive: true,
+          scales: {
+            xAxes: [{
+              gridLines: {
+                color: 'red',
+                zeroLineColor: 'red'
+              },
+              ticks: {
+                fontSize: 2,
+                fontColor: 'red'
+              }
+            }],
+            yAxes: [{
+              display: false,
+              ticks: {
+                display: true,
+              }
+            }]
+          },
+          title: {
+            display: true,
+          },
+          elements: {
+            line: {
+              borderWidth: 34
+            },
+            point: {
+              radius: 0,
+              hitRadius: 10,
+              hoverRadius: 4
+            }
+          }
+        }
+      });
+    }
+
+    }
+       
+   
+        
+    },
+    mounted: function () {
+      
+      
+      this.gettest()
+      console.log(JSON.stringify(this.test1))
+//       var ctx = document.getElementById("myCanvas");
+// if (ctx) {
+//       ctx.height = 130;
+//       var myChart = new Chart(ctx, {
+//         type: 'line',
+//         data: {
+//           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'december'],
+//           type: 'line',
+//           datasets: [{
+//             data: this.test,
+//             label: 'Dataset',
+//             backgroundColor: 'red',
+//             borderColor: 'black',
+//           },]
+//         },
+//         options: {
+//           maintainAspectRatio: true,
+//           legend: {
+//             display: false
+//           },
+//           layout: {
+//             padding: {
+//               left: 0,
+//               right: 0,
+//               top: 0,
+//               bottom: 0
+//             }
+//           },
+//           responsive: true,
+//           scales: {
+//             xAxes: [{
+//               gridLines: {
+//                 color: 'red',
+//                 zeroLineColor: 'red'
+//               },
+//               ticks: {
+//                 fontSize: 2,
+//                 fontColor: 'red'
+//               }
+//             }],
+//             yAxes: [{
+//               display: false,
+//               ticks: {
+//                 display: true,
+//               }
+//             }]
+//           },
+//           title: {
+//             display: true,
+//           },
+//           elements: {
+//             line: {
+//               borderWidth: 34
+//             },
+//             point: {
+//               radius: 0,
+//               hitRadius: 10,
+//               hoverRadius: 4
+//             }
+//           }
+//         }
+//       });
+//     }
+
+    }
+
+})
+        
+
+</script>
+</body>
+</html>

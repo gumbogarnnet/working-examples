@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="au theme template">
+        <meta name="author" content="Hau Nguyen">
+        <meta name="keywords" content="au theme template">
+
+        <!-- Title Page-->
+        <title>Dashboard</title>
+
+        <!-- Fontfaces CSS-->
+        <link href="adminstuff/css/font-face.css" rel="stylesheet" media="all">
+        <link href="adminstuff/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="adminstuff/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+        <link href="adminstuff/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+        <!-- Bootstrap CSS-->
+        <link href="adminstuff/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+        <!-- Vendor CSS-->
+        <link href="adminstuff/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+        <link href="adminstuff/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+        <link href="adminstuff/vendor/wow/animate.css" rel="stylesheet" media="all">
+        <link href="adminstuff/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+        <link href="adminstuff/vendor/slick/slick.css" rel="stylesheet" media="all">
+        <link href="adminstuff/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+        <link href="adminstuff/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+        <!-- Main CSS-->
+        <link href="adminstuff/css/theme.css" rel="stylesheet" media="all">
+
+    </head>
+
+    <body class="animsition">
+        <div class="page-wrapper">
+            <!-- HEADER MOBILE-->
+            <header class="header-mobile d-block d-lg-none">
+                <div class="header-mobile__bar">
+                    <div class="container-fluid">
+                        <div class="header-mobile-inner">
+                            <a class="logo" href="index.html">
+                                <img src="images/icon/logo.png" alt="CoolAdmin" />
+                            </a>
+                            <button class="hamburger hamburger--slider" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar-mobile">
+                    <div class="container-fluid">
+                        <ul class="navbar-mobile__list list-unstyled">
+                            <li >
+                                <a class="js-arrow" href="main%20dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+
+                            </li>
+                            <li>
+                                <a href="#overview">
+                                    <i class="fas fa-chart-bar"></i>Overview</a>
+                            </li>
+                            <li>
+                                <a href="#manageproducts">
+                                    <i class="fas fa-table"></i>Manage Products</a>
+                            </li>
+                            <li>
+                                <a href="#manageusers">
+                                    <i class="far fa-check-square"></i>Manage Users</a>
+                            </li>
+                            <li>
+                                <a href="calendar.html">
+                                    <i class="fas fa-calendar-alt"></i>Calendar</a>
+                            </li>
+                            <li>
+                                <a href="map.html">
+                                    <i class="fas fa-map-marker-alt"></i>Maps</a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- END HEADER MOBILE-->
+
+            <!-- MENU SIDEBAR-->
+            <aside class="menu-sidebar d-none d-lg-block">
+                <div class="logo">
+                    <a href="#">
+                        <img src="images/icon/logo.png" alt="Cool Admin" />
+                    </a>
+                </div>
+                <div class="menu-sidebar__content js-scrollbar1">
+                    <nav class="navbar-sidebar">
+                        <ul class="list-unstyled navbar__list">
+                            <li >
+                                <a class="js-arrow" href="main%20dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+
+                            </li>
+                            <li>
+                                <a href="#overview">
+                                    <i class="fas fa-chart-bar"></i>Overview</a>
+                            </li>
+                            <li>
+                                <a href="#manageproducts">
+                                    <i class="fas fa-table"></i>Manage Products</a>
+                            </li>
+                            <li>
+                                <a href="#manageusers">
+                                    <i class="far fa-check-square"></i>Manage Users</a>
+                            </li>
+                            <li>
+                                <a href="calendar.html">
+                                    <i class="fas fa-calendar-alt"></i>Calendar</a>
+                            </li>
+                            <li>
+                                <a href="map.html">
+                                    <i class="fas fa-map-marker-alt"></i>Maps</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+            <!-- END MENU SIDEBAR-->
+
+            <!-- PAGE CONTAINER-->
+            <div class="page-container">
+                <!-- HEADER DESKTOP-->
+                <header class="header-desktop">
+                    <div class="section__content section__content--p30">
+                        <div class="container-fluid">
+                            <div class="header-wrap">
+                                <form class="form-header" action="" method="POST">
+                                    <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                    <button class="au-btn--submit" type="submit">
+                                        <i class="zmdi zmdi-search"></i>
+                                    </button>
+                                </form>
+                                <div class="header-button">
+                                    <div class="noti-wrap">
+                                        <div class="noti__item js-item-menu">
+                                            <i class="zmdi zmdi-comment-more"></i>
+                                            <span class="quantity">1</span>
+                                            <div class="mess-dropdown js-dropdown">
+                                                <div class="mess__title">
+                                                    <p>You have 2 news message</p>
+                                                </div>
+                                                <div class="mess__item">
+                                                    <div class="image img-cir img-40">
+                                                        <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <h6>Michelle Moreno</h6>
+                                                        <p>Have sent a photo</p>
+                                                        <span class="time">3 min ago</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mess__item">
+                                                    <div class="image img-cir img-40">
+                                                        <img src="images/icon/avatar-04.jpg" alt="Diane Myers" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <h6>Diane Myers</h6>
+                                                        <p>You are now connected on message</p>
+                                                        <span class="time">Yesterday</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mess__footer">
+                                                    <a href="#">View all messages</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="noti__item js-item-menu">
+                                            <i class="zmdi zmdi-email"></i>
+                                            <span class="quantity">1</span>
+                                            <div class="email-dropdown js-dropdown">
+                                                <div class="email__title">
+                                                    <p>You have 3 New Emails</p>
+                                                </div>
+                                                <div class="email__item">
+                                                    <div class="image img-cir img-40">
+                                                        <img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>Meeting about new dashboard...</p>
+                                                        <span>Cynthia Harvey, 3 min ago</span>
+                                                    </div>
+                                                </div>
+                                                <div class="email__item">
+                                                    <div class="image img-cir img-40">
+                                                        <img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>Meeting about new dashboard...</p>
+                                                        <span>Cynthia Harvey, Yesterday</span>
+                                                    </div>
+                                                </div>
+                                                <div class="email__item">
+                                                    <div class="image img-cir img-40">
+                                                        <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>Meeting about new dashboard...</p>
+                                                        <span>Cynthia Harvey, April 12,,2018</span>
+                                                    </div>
+                                                </div>
+                                                <div class="email__footer">
+                                                    <a href="#">See all emails</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="noti__item js-item-menu">
+                                            <i class="zmdi zmdi-notifications"></i>
+                                            <span class="quantity">3</span>
+                                            <div class="notifi-dropdown js-dropdown">
+                                                <div class="notifi__title">
+                                                    <p>You have 3 Notifications</p>
+                                                </div>
+                                                <div class="notifi__item">
+                                                    <div class="bg-c1 img-cir img-40">
+                                                        <i class="zmdi zmdi-email-open"></i>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>You got a email notification</p>
+                                                        <span class="date">April 12, 2018 06:50</span>
+                                                    </div>
+                                                </div>
+                                                <div class="notifi__item">
+                                                    <div class="bg-c2 img-cir img-40">
+                                                        <i class="zmdi zmdi-account-box"></i>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>Your account has been blocked</p>
+                                                        <span class="date">April 12, 2018 06:50</span>
+                                                    </div>
+                                                </div>
+                                                <div class="notifi__item">
+                                                    <div class="bg-c3 img-cir img-40">
+                                                        <i class="zmdi zmdi-file-text"></i>
+                                                    </div>
+                                                    <div class="content">
+                                                        <p>You got a new file</p>
+                                                        <span class="date">April 12, 2018 06:50</span>
+                                                    </div>
+                                                </div>
+                                                <div class="notifi__footer">
+                                                    <a href="#">All notifications</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="account-wrap">
+                                        <div class="account-item clearfix js-item-menu">
+                                            <div class="image">
+                                                <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            </div>
+                                            <div class="content">
+                                                <a class="js-acc-btn" href="#">john doe</a>
+                                            </div>
+                                            <div class="account-dropdown js-dropdown">
+                                                <div class="info clearfix">
+                                                    <div class="image">
+                                                        <a href="#">
+                                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h5 class="name">
+                                                            <a href="#">john doe</a>
+                                                        </h5>
+                                                        <span class="email">johndoe@example.com</span>
+                                                    </div>
+                                                </div>
+                                                <div class="account-dropdown__body">
+                                                    <div class="account-dropdown__item">
+                                                        <a href="#">
+                                                            <i class="zmdi zmdi-account"></i>Account</a>
+                                                    </div>
+                                                    <div class="account-dropdown__item">
+                                                        <a href="#">
+                                                            <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                    </div>
+                                                    <div class="account-dropdown__item">
+                                                        <a href="#">
+                                                            <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                    </div>
+                                                </div>
+                                                <div class="account-dropdown__footer">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-power"></i>Logout</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- HEADER DESKTOP-->
+
+                <!-- MAIN CONTENT-->
+                <div class="main-content">
+                    <div class="section__content section__content--p30">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="overview-wrap" id="overview">
+                                        <h2 class="title-1">overall perfomance</h2>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-t-25">
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="overview-item overview-item--c1">
+                                        <div class="overview__inner">
+                                            <div class="overview-box clearfix">
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-account-o"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <h2>10368</h2>
+                                                    <span>Overall Customers</span>
+                                                </div>
+                                            </div>
+                                            <div class="overview-chart" id="index">
+
+                                                <canvas id="chartoverallcustomers"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="overview-item overview-item--c2">
+                                        <div class="overview__inner">
+                                            <div class="overview-box clearfix">
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <h2>388,688</h2>
+                                                    <span>Total Items Sold</span>
+                                                </div>
+                                            </div>
+                                            <div class="overview-chart">
+                                                <canvas id="widgetChart2"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="overview-item overview-item--c3">
+                                        <div class="overview__inner">
+                                            <div class="overview-box clearfix">
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-calendar-note"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <h2>1,086</h2>
+                                                    <span>this week</span>
+                                                </div>
+                                            </div>
+                                            <div class="overview-chart">
+                                                <canvas id="widgetChart3"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="overview-item overview-item--c4">
+                                        <div class="overview__inner">
+                                            <div class="overview-box clearfix">
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-money"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <h2>$1,060,386</h2>
+                                                    <span>total earnings</span>
+                                                </div>
+                                            </div>
+                                            <div class="overview-chart">
+                                                <canvas id="widgetChart4"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="au-card recent-report">
+                                        <div class="au-card-inner">
+                                            <h3 class="title-2">Sales against previous year</h3>
+                                            <div class="chart-info">
+                                                <div class="chart-info__left">
+                                                    <div class="chart-note">
+                                                        <span class="dot dot--blue"></span>
+                                                        <span>last year</span>
+                                                    </div>
+                                                    <div class="chart-note mr-0">
+                                                        <span class="dot dot--green"></span>
+                                                        <span>current</span>
+                                                    </div>
+                                                </div>
+                                                <div class="chart-info__right">
+                                                    <div class="chart-statis">
+                                                        <span class="index incre">
+                                                            <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
+                                                        <span class="label">Sales</span>
+                                                    </div>
+                                                    <div class="chart-statis mr-0">
+                                                        <span class="index decre">
+                                                            <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
+                                                        <span class="label">Total products</span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="recent-report__chart">
+                                                <canvas id="recent-rep-chart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="au-card chart-percent-card">
+                                        <div class="au-card-inner">
+                                            <h3 class="title-2 tm-b-5">% Sales by product</h3>
+                                            <div class="row no-gutters">
+                                                <div class="col-xl-6">
+                                                    <div class="chart-note-wrap">
+                                                        <div class="chart-note mr-0 d-block">
+                                                            <span class="dot dot--blue"></span>
+                                                            <span>men</span>
+                                                        </div>
+                                                        <div class="chart-note mr-0 d-block">
+                                                            <span class="dot dot--red"></span>
+                                                            <span>women</span>
+                                                        </div>
+                                                        <div class="chart-note mr-0 d-block">
+                                                            <span class="dot dot--green"></span>
+                                                            <span>kids</span>
+                                                        </div>
+                                                        <div class="chart-note mr-0 d-block">
+                                                            <span class="dot dot--blue"></span>
+                                                            <span>watches</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="percent-chart">
+                                                        <canvas id="percent-chart"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <h2 class="title-1 m-b-25">Orders</h2>
+                                    <div class="table-responsive table--no-card m-b-40">
+                                        <table class="table table-borderless table-striped table-earning">
+                                            <thead>
+                                                <tr>
+                                                    <th>date</th>
+                                                    <th>order ID</th>
+
+                                                    <th class="text-right">price</th>
+                                                    <th class="text-right">quantity</th>
+                                                    <th class="text-right">total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2018-09-29 05:57</td>
+                                                    <td>100398</td>
+
+                                                    <td class="text-right">$999.00</td>
+                                                    <td class="text-right">1</td>
+                                                    <td class="text-right">$999.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018-09-28 01:22</td>
+                                                    <td>100397</td>
+
+                                                    <td class="text-right">$756.00</td>
+                                                    <td class="text-right">1</td>
+                                                    <td class="text-right">$756.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018-09-27 02:12</td>
+                                                    <td>100396</td>
+
+                                                    <td class="text-right">$22.00</td>
+                                                    <td class="text-right">2</td>
+                                                    <td class="text-right">$44.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018-09-26 23:06</td>
+                                                    <td>100395</td>
+
+                                                    <td class="text-right">$1199.00</td>
+                                                    <td class="text-right">1</td>
+                                                    <td class="text-right">$1199.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018-09-25 19:03</td>
+                                                    <td>100393</td>
+
+                                                    <td class="text-right">$10.00</td>
+                                                    <td class="text-right">3</td>
+                                                    <td class="text-right">$30.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018-09-29 05:57</td>
+                                                    <td>100392</td>
+
+                                                    <td class="text-right">$199.00</td>
+                                                    <td class="text-right">6</td>
+                                                    <td class="text-right">$1494.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018-09-24 19:10</td>
+                                                    <td>100391</td>
+
+                                                    <td class="text-right">$699.00</td>
+                                                    <td class="text-right">1</td>
+                                                    <td class="text-right">$699.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018-09-22 00:43</td>
+                                                    <td>100393</td>
+
+                                                    <td class="text-right">$10.00</td>
+                                                    <td class="text-right">3</td>
+                                                    <td class="text-right">$30.00</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <h2 class="title-1 m-b-25">Best Selling </h2>
+                                    <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
+                                        <div class="au-card-inner">
+                                            <div class="table-responsive">
+                                                <table class="table table-top-countries">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>United States</td>
+                                                            <td class="text-right">$119,366.96</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Australia</td>
+                                                            <td class="text-right">$70,261.65</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>United Kingdom</td>
+                                                            <td class="text-right">$46,399.22</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Turkey</td>
+                                                            <td class="text-right">$35,364.90</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Germany</td>
+                                                            <td class="text-right">$20,366.96</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>France</td>
+                                                            <td class="text-right">$10,366.96</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Australia</td>
+                                                            <td class="text-right">$5,366.96</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Italy</td>
+                                                            <td class="text-right">$1639.32</td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="manageproducts" >
+                                <div class="col-md-12">
+                                    <!-- DATA TABLE -->
+                                    <h3 class="title-5 m-b-35">Manage Products</h3>
+                                    <div class="table-data__tool">
+                                        <div class="table-data__tool-left">
+                                            <div class="rs-select2--light rs-select2--md">
+                                                <select class="js-select2" name="property">
+                                                    <option selected="selected">All Properties</option>
+                                                    <option value="">Option 1</option>
+                                                    <option value="">Option 2</option>
+                                                </select>
+                                                <div class="dropDownSelect2"></div>
+                                            </div>
+                                            <div class="rs-select2--light rs-select2--sm">
+                                                <select class="js-select2" name="time">
+                                                    <option selected="selected">Today</option>
+                                                    <option value="">3 Days</option>
+                                                    <option value="">1 Week</option>
+                                                </select>
+                                                <div class="dropDownSelect2"></div>
+                                            </div>
+                                            <button class="au-btn-filter">
+                                                <i class="zmdi zmdi-filter-list"></i>filters</button>
+                                        </div>
+                                        <div class="table-data__tool-right">
+                                            <button class="au-btn au-btn-icon au-btn--green au-btn--small" data-toggle="modal" data-target="#mediumModal">
+                                                <i class="zmdi zmdi-plus"></i>add product</button>
+                                            <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                                <select class="js-select2" name="type">
+                                                    <option selected="selected">Export</option>
+                                                    <option value="">Pdf</option>
+                                                    <option value="">Word</option>
+                                                </select>
+                                                <div class="dropDownSelect2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive table-responsive-data2">
+                                        <table class="table table-data2">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </th>
+
+                                                    <th>description</th>
+                                                    <th>date</th>
+                                                    <th>status</th>
+                                                    <th>price</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="tr-shadow">
+                                                    <td>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </td>
+
+                                                    <td class="desc">Samsung S8 Black</td>
+                                                    <td>2018-09-27 02:12</td>
+                                                    <td>
+                                                        <span class="status--process">Processed</span>
+                                                    </td>
+                                                    <td>$679.00</td>
+                                                    <td>
+                                                        <div class="table-data-feature">
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                <i class="zmdi zmdi-mail-send"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                <i class="zmdi zmdi-edit"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                <i class="zmdi zmdi-more"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="spacer"></tr>
+                                                <tr class="tr-shadow">
+                                                    <td>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </td>
+
+                                                    <td class="desc">iPhone X 64Gb Grey</td>
+                                                    <td>2018-09-29 05:57</td>
+                                                    <td>
+                                                        <span class="status--process">Processed</span>
+                                                    </td>
+                                                    <td>$999.00</td>
+                                                    <td>
+                                                        <div class="table-data-feature">
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                <i class="zmdi zmdi-mail-send"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                <i class="zmdi zmdi-edit"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                <i class="zmdi zmdi-more"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="spacer"></tr>
+                                                <tr class="tr-shadow">
+                                                    <td>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </td>
+
+                                                    <td class="desc">iPhone X 256Gb Black</td>
+                                                    <td>2018-09-25 19:03</td>
+                                                    <td>
+                                                        <span class="status--denied">Denied</span>
+                                                    </td>
+                                                    <td>$1199.00</td>
+                                                    <td>
+                                                        <div class="table-data-feature">
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                <i class="zmdi zmdi-mail-send"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                <i class="zmdi zmdi-edit"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                <i class="zmdi zmdi-more"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="spacer"></tr>
+                                                <tr class="tr-shadow">
+                                                    <td>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </td>
+
+                                                    <td class="desc">Camera C430W 4k</td>
+                                                    <td>2018-09-24 19:10</td>
+                                                    <td>
+                                                        <span class="status--process">Processed</span>
+                                                    </td>
+                                                    <td>$699.00</td>
+                                                    <td>
+                                                        <div class="table-data-feature">
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                <i class="zmdi zmdi-mail-send"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                <i class="zmdi zmdi-edit"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button>
+                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                <i class="zmdi zmdi-more"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div id="manageusers"></div>
+                                    <!-- END DATA TABLE -->
+                                    <br/>
+                                    <h3 class="title-5 m-b-35" >Manage Users</h3>
+                                    <div class="col-lg-12">
+                                        <!-- USER DATA-->
+                                        <div class="user-data m-b-30">
+                                            <h3 class="title-3 m-b-30">
+                                                <i class="zmdi zmdi-account-calendar"></i>user data</h3>
+                                            <div class="filters m-b-45">
+                                                <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
+                                                    <select class="js-select2" name="property">
+                                                        <option selected="selected">All Users</option>
+                                                        <option value="">Admin</option>
+                                                        <option value="">User</option>
+                                                        <option value="">Member</option>
+                                                        <option value="">External User</option>
+                                                    </select>
+                                                    <div class="dropDownSelect2"></div>
+                                                </div>
+                                                <div class="rs-select2--dark rs-select2--sm rs-select2--border">
+                                                    <select class="js-select2 au-select-dark" name="time">
+                                                        <option selected="selected">Order</option>
+                                                        <option value="">By Name</option>
+                                                        <option value="">By Date</option>
+                                                    </select>
+                                                    <div class="dropDownSelect2"></div>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive table-data">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>name</td>
+                                                            <td>role</td>
+                                                            <td>type</td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="table-data__info">
+                                                                    <h6>lori lynch</h6>
+                                                                    <span>
+                                                                        <a href="#">johndoe@gmail.com</a>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="role admin">admin</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="rs-select2--trans rs-select2--sm">
+                                                                    <select class="js-select2" name="property">
+                                                                        <option selected="selected">Full Control</option>
+                                                                        <option value="">Post</option>
+                                                                        <option value="">Watch</option>
+                                                                    </select>
+                                                                    <div class="dropDownSelect2"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="table-data-feature">
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                        <i class="zmdi zmdi-edit"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                        <i class="zmdi zmdi-delete"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                        <i class="zmdi zmdi-more"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox" checked="checked">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="table-data__info">
+                                                                    <h6>lori lynch</h6>
+                                                                    <span>
+                                                                        <a href="#">johndoe@gmail.com</a>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="role user">user</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="rs-select2--trans rs-select2--sm">
+                                                                    <select class="js-select2" name="property">
+                                                                        <option value="">Full Control</option>
+                                                                        <option value="" selected="selected">Post</option>
+                                                                        <option value="">Watch</option>
+                                                                    </select>
+                                                                    <div class="dropDownSelect2"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="table-data-feature">
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                        <i class="zmdi zmdi-edit"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                        <i class="zmdi zmdi-delete"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                        <i class="zmdi zmdi-more"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="table-data__info">
+                                                                    <h6>lori lynch</h6>
+                                                                    <span>
+                                                                        <a href="#">johndoe@gmail.com</a>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="role user">user</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="rs-select2--trans rs-select2--sm">
+                                                                    <select class="js-select2" name="property">
+                                                                        <option value="">Full Control</option>
+                                                                        <option value="" selected="selected">Post</option>
+                                                                        <option value="">Watch</option>
+                                                                    </select>
+                                                                    <div class="dropDownSelect2"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+
+                                                                <div class="table-data-feature">
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                        <i class="zmdi zmdi-edit"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                        <i class="zmdi zmdi-delete"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                        <i class="zmdi zmdi-more"></i>
+                                                                    </button>
+                                                                </div>
+
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="au-checkbox">
+                                                                    <input type="checkbox">
+                                                                    <span class="au-checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="table-data__info">
+                                                                    <h6>lori lynch</h6>
+                                                                    <span>
+                                                                        <a href="#">johndoe@gmail.com</a>
+                                                                    </span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="role member">member</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="rs-select2--trans rs-select2--sm">
+                                                                    <select class="js-select2" name="property">
+                                                                        <option selected="selected">Full Control</option>
+                                                                        <option value="">Post</option>
+                                                                        <option value="">Watch</option>
+                                                                    </select>
+                                                                    <div class="dropDownSelect2"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="table-data-feature">
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                        <i class="zmdi zmdi-edit"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                        <i class="zmdi zmdi-delete"></i>
+                                                                    </button>
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                        <i class="zmdi zmdi-more"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="user-data__footer">
+                                                <button class="au-btn au-btn-load">load more</button>
+                                            </div>
+                                        </div>
+                                        <!-- END USER DATA-->
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- END MAIN CONTENT-->
+                <!-- END PAGE CONTAINER-->
+            </div>
+            <!-- modal medium -->
+            <div class="modal fade" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+
+
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Add Product</strong> Items
+                            </div>
+                            <div class="card-body card-block">
+                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label class=" form-control-label">User</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <p class="form-control-static">Username</p>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Product Name</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="text-input" v-model='name' placeholder="Product Name" class="form-control">
+                                            <small class="form-text text-muted">Product name e.g Belt</small>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="email-input" class=" form-control-label">Price</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="number" id="email-input" v-model='price'  class="form-control">
+                                            <small class="help-block form-text">Enter the product price</small>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="selectSm" class=" form-control-label">Select  Cartegory</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <select name="selectSm" id="SelectLm" v-model='cartegory' class="form-control-sm form-control">
+                                                <option value="All">All</option>
+                                                <option value="Men">Men</option>
+                                                <option value="Women">Women</option>
+                                                <option value="Kids">Kids</option>
+                                                <option value="Watches">Watches</option>
+                                                <option value="Shoes">Shoes</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="disabled-input" class=" form-control-label">Disabled Input</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="text" id="disabled-input" name="disabled-input" placeholder="Disabled" disabled="" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="textarea-input" class=" form-control-label">Product description</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <textarea name="textarea-input" id="textarea-input" rows="9" v-model='description' placeholder="...description" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="file-input" class=" form-control-label">Select Image</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <input type="file" @change="onFileChanged" class="form-control-file">
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="card-footer">
+
+                                <button @click="onUpload" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                </button>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- end modal medium -->
+        </div>
+
+
+        <!-- Jquery JS-->
+        <script src="adminstuff/vendor/jquery-3.2.1.min.js"></script>
+        <!-- Bootstrap JS-->
+        <script src="adminstuff/vendor/bootstrap-4.1/popper.min.js"></script>
+        <script src="adminstuff/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+        <!-- Vendor JS       -->
+        <script src="adminstuff/vendor/slick/slick.min.js">
+        </script>
+        <script src="adminstuff/vendor/wow/wow.min.js"></script>
+        <script src="adminstuff/vendor/animsition/animsition.min.js"></script>
+        <script src="adminstuff/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+        </script>
+        <script src="adminstuff/vendor/counter-up/jquery.waypoints.min.js"></script>
+        <script src="adminstuff/vendor/counter-up/jquery.counterup.min.js">
+        </script>
+        <script src="adminstuff/vendor/circle-progress/circle-progress.min.js"></script>
+        <script src="adminstuff/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="adminstuff/vendor/chartjs/Chart.bundle.min.js"></script>
+        <script src="adminstuff/vendor/select2/select2.min.js">
+        </script>
+
+        <!-- Main JS-->
+        <script src="adminstuff/js/main.js"></script>
+        <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
+
+
+
+        <script>
+            var memberHome = new Vue({
+                el: '#index',
+                data: function () {
+                    return{
+                        cart: [],
+                        cartItems: [],
+                        cartProducts: [],
+                        src: 'data:image/jpeg;base64,',
+                        total: '',
+                        address: '',
+                        country: '',
+                        phoneNumber: '',
+                        email: 'nfgfgn',
+                        email1: this.reversedMessage,
+                        data: [100, 2, 3, 4, 50, 6, 7],
+                        frequencies: [],
+
+                    }
+                },
+                methods: {
+
+                    getAllProducts() {
+
+                        axios
+                                .get('/getAllProducts')
+                                .then(response => (this.cartProducts = response.data))
+                    },
+
+                    getTotalCustomers() {
+                        axios
+                                .get('/getTotalCustomers')
+                                .then(response => (this.setChartOverallCustomers(response.data)))
+                    },
+
+                    setChartOverallCustomers(te) {
+                        console.log(te)
+                        var month_name = function (dt) {
+                            mlist = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                            return mlist[dt.getMonth()];
+                        };
+                        this.cart = te
+                        this.date.forEach(function (item) {
+                            console.log(this.date)
+                            console.log(month_name(new Date(item)));
+
+                        });
+
+                        //WidgetChart 1
+                        var ctx = document.getElementById("chartoverallcustomers");
+                        if (ctx) {
+                            ctx.height = 130;
+                            var myChart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'december'],
+                                    type: 'line',
+                                    datasets: [{
+                                            data: te,
+                                            label: 'Frequency',
+                                            backgroundColor: 'rgba(255,255,255,.1)',
+                                            borderColor: 'rgba(255,255,255,.55)',
+                                        }, ]
+                                },
+                                options: {
+                                    maintainAspectRatio: true,
+                                    legend: {
+                                        display: false
+                                    },
+                                    layout: {
+                                        padding: {
+                                            left: 0,
+                                            right: 0,
+                                            top: 0,
+                                            bottom: 0
+                                        }
+                                    },
+                                    responsive: true,
+                                    scales: {
+                                        xAxes: [{
+                                                gridLines: {
+                                                    color: 'transparent',
+                                                    zeroLineColor: 'transparent'
+                                                },
+                                                ticks: {
+                                                    fontSize: 2,
+                                                    fontColor: 'transparent'
+                                                }
+                                            }],
+                                        yAxes: [{
+                                                display: false,
+                                                ticks: {
+                                                    display: false,
+                                                }
+                                            }]
+                                    },
+                                    title: {
+                                        display: false,
+                                    },
+                                    elements: {
+                                        line: {
+                                            borderWidth: 0
+                                        },
+                                        point: {
+                                            radius: 0,
+                                            hitRadius: 10,
+                                            hoverRadius: 4
+                                        }
+                                    }
+                                }
+                            });
+                        }
+
+                    },
+                    getTotalSales() {
+                        axios
+                                .get('/getTotalsales')
+                                .then(response => (this.secondChart(response.data)))
+                    },
+                    secondChart(dis) {
+                        //WidgetChart 2
+                        var ctx = document.getElementById("widgetChart2");
+                        if (ctx) {
+                            ctx.height = 130;
+                            var myChart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                                    type: 'line',
+                                    datasets: [{
+                                            data: dis,
+                                            label: 'Dataset',
+                                            backgroundColor: 'transparent',
+                                            borderColor: 'rgba(255,255,255,.55)',
+                                        }, ]
+                                },
+                                options: {
+
+                                    maintainAspectRatio: false,
+                                    legend: {
+                                        display: false
+                                    },
+                                    responsive: true,
+                                    tooltips: {
+                                        mode: 'index',
+                                        titleFontSize: 12,
+                                        titleFontColor: '#000',
+                                        bodyFontColor: '#000',
+                                        backgroundColor: '#fff',
+                                        titleFontFamily: 'Montserrat',
+                                        bodyFontFamily: 'Montserrat',
+                                        cornerRadius: 3,
+                                        intersect: false,
+                                    },
+                                    scales: {
+                                        xAxes: [{
+                                                gridLines: {
+                                                    color: 'transparent',
+                                                    zeroLineColor: 'transparent'
+                                                },
+                                                ticks: {
+                                                    fontSize: 2,
+                                                    fontColor: 'transparent'
+                                                }
+                                            }],
+                                        yAxes: [{
+                                                display: false,
+                                                ticks: {
+                                                    display: false,
+                                                }
+                                            }]
+                                    },
+                                    title: {
+                                        display: false,
+                                    },
+                                    elements: {
+                                        line: {
+                                            tension: 0.00001,
+                                            borderWidth: 1
+                                        },
+                                        point: {
+                                            radius: 4,
+                                            hitRadius: 10,
+                                            hoverRadius: 4
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    },
+                },
+
+                computed: {
+                    // a computed getter
+                    date: function () {
+
+                        return this.cart.map(function (el) {
+                            return el.date;
+                        });
+                    }
+                },
+
+                mounted: function () {
+                    this.getTotalSales()
+                    this.getTotalCustomers()
+
+                }
+
+            })
+        </script>
+
+    </body>
+
+</html>
+<!-- end document-->
