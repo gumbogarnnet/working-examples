@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+
+
+        <title>Exception home test</title>
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/"/>
+
+        <!-- Bootstrap core CSS -->
+        <link href="Starter%20Template%20for%20Bootstrap_files/bootstrap.css" rel="stylesheet"/>
+
+        <!-- Custom styles for this template -->
+        <link href="Starter%20Template%20for%20Bootstrap_files/starter-template.css" rel="stylesheet"/>
+        <link type="text/css" rel="stylesheet" href="style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet"/>
+    </head>
+
+    <body >
+        <div id="app">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="http://example.com/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="text" v-model="id"/>
+                        <button class="btn btn-outline-success my-2 my-sm-0" v-on:click="search()">Search</button>
+                    </div>
+                </div>
+            </nav>
+            <br/>
+            <br/>
+            <br/>
+            <div class="linking text-center">
+                <a  href="#" data-toggle="modal" data-target="#exampleModalCenter">Add Bird</a>
+            </div>
+            <div class="alert alert-success alert-dismissible fade " role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="alert-heading">Bird Saved Successfully</h4>
+                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                <hr/>
+                <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+            </div>
+            <br/>
+            <br/>
+            <main role="main" class="container">
+
+
+
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Scientific Name</th>
+                            <th scope="col">Specie</th>
+                            <th scope="col">Mass</th>
+                            <th scope="col">Length</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr v-for="bird in birds">
+                            <th scope="row">{{bird.id}}</th>
+                            <td>{{bird.scientificName}}</td>
+                            <td>{{bird.specie}}</td>
+                            <td>{{bird.mass}}</td>
+                            <td>{{bird.length}}</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p v-if="saveError.message == 'Bird was not found for parameters {id=already exsists}'">bird Already exsist</p>
+                                <p v-if="saveError" v-for="saveError in saveError.subErrors">{{saveError.field}}:{{saveError.message}}</p>
+
+                                <input class="form-control form-control-sm" type="text" placeholder="Scientific Name" v-model="scientificName"/><br/>
+                                <input class="form-control form-control-sm" type="text" placeholder="Specie" v-model="specie"/><br/>
+                                <input class="form-control form-control-sm" type="number" placeholder="Mass" v-model="mass"/><br/>
+                                <input class="form-control form-control-sm" type="number" placeholder="length" v-model="length"/>
+
+                            </div>
+                            <div class="modal-footer ">
+                                <button type="button" class="btn btn-primary" v-on:click="saveBird()">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main><!-- /.container -->
+
+
+        </div>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="Starter%20Template%20for%20Bootstrap_files/jquery-3.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>-->
+        <script src="Starter%20Template%20for%20Bootstrap_files/popper.js"></script>
+        <script src="Starter%20Template%20for%20Bootstrap_files/bootstrap.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+
+
+        <script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello Vue!',
+        scientificName: "",
+        specie: "",
+        mass: "",
+        length: "",
+        birds: "",
+        id: "",
+        saveError: "",
+    },
+    methods: {
+        search() {
+            axios
+                    .get("/birds/" + this.id)
+                    .then(response => (this.birds = [response.data])).catch((error) => {
+                // handle this error here
+                var temperror = error.response.data.apierror
+                alert(JSON.stringify(temperror.message));
+            })
+        },
+        saveBird() {
+            this.saveError = "",
+                    axios
+                    .post("/birds", {
+                        scientificName: this.scientificName,
+                        mass: this.mass,
+                        length: this.length,
+                        specie: this.specie,
+                    })
+                    .then(response => (alert("Bird saved successfully")))
+                    .catch((error) => {
+                        // handle this error here
+                        this.saveError = error.response.data.apierror
+
+
+                        if (error.response.data.message == "bird already exist") {
+                            alert("the bird name already exist")
+                        }
+                    })
+
+        },
+        getAllBird() {
+
+            axios
+                    .get("/birds/all")
+                    .then(response => (this.birds = response.data)).catch((error) => {
+                // handle this error here
+                var temperror = error.response.data.apierror
+                alert(JSON.stringify(temperror.message));
+            })
+        },
+    },
+
+    mounted: function () {
+        this.getAllBird()
+
+    }
+})
+        </script>
+
+
+    </body>
+</html>
