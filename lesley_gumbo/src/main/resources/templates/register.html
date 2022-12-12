@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>SB Admin 2 - Register</title>
+
+        <!-- Custom fonts for this template-->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+        <!-- Custom styles for this template-->
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    </head>
+
+    <body class="bg-gradient-primary" style="background-image: url('360_F_275471448_JVqZr4pwfoqFMo5KXTaaXAAt0tlcQvSZ.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+        <div class="container">
+
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row" id="app" >
+                        <div class="col-lg-5">
+                            <img src="sublim3_246018.jpg" alt="" width="500" height="600"/>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                </div>
+                                <form class="user" >
+                                    <p class="text-danger" id="errormssg"></p>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input type="email"  v-model="firstName" class="form-control form-control-user" id="firstName"
+                                                   placeholder="First Name">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" v-model="lastName" class="form-control form-control-user" id="lastName"
+                                                   placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" v-model="userName" class="form-control form-control-user" id="userName"
+                                               placeholder="Email Address">
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input type="password" v-model="password" class="form-control form-control-user"
+                                                   id="password" placeholder="Password">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="password" v-model="password1" class="form-control form-control-user"
+                                                   id="password1" placeholder="Repeat Password">
+                                        </div>
+                                    </div>
+                                    <div >
+                                        <input type="button" value ="Register Account" class="btn btn-primary btn-user btn-block" v-on:click="registerSurveyor()"/>
+
+                                    </div>
+                                    <!--                                    <hr>
+                                                                        <a href="index.html" class="btn btn-google btn-user btn-block">
+                                                                            <i class="fab fa-google fa-fw"></i> Register with Google
+                                                                        </a>
+                                                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                                                            <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                                                                        </a>-->
+                                </form>
+                                <hr>
+
+                                <div class="text-center">
+                                    <a class="small" href="/login">Already have an account? Login!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data() {
+                    return {
+                        firstName: "",
+                        lastName: "",
+                        userName: "",
+                        password: "",
+                        password1: "",
+                        mssg: "1w2w"
+
+                    }
+                },
+                methods: {
+                    onFileChanged() {
+
+                    },
+                    registerSurveyor() {
+
+                        var error = 0;
+                        if (this.password === this.password1) {
+
+                            if (this.firstName === "") {
+                                document.getElementById('firstName').classList.add("is-invalid");
+                                error = 1
+                                document.getElementById('errormssg').innerHTML = "Please fill in all the details"
+                            } else {
+                                document.getElementById('firstName').classList.add("is-valid");
+                            }
+                            if (this.userName === "") {
+                                document.getElementById('userName').classList.add("is-invalid");
+                                error = 1
+                                document.getElementById('errormssg').innerHTML = "Please fill in all the details"
+                            } else {
+                                document.getElementById('userName').classList.add("is-valid");
+                            }
+                            if (this.lastName === "") {
+                                document.getElementById('lastName').classList.add("is-invalid");
+                                error = 1
+                                document.getElementById('errormssg').innerHTML = "Please fill in all the details"
+                            } else {
+                                document.getElementById('lastName').classList.add("is-valid");
+                            }
+                            if (this.password === "") {
+                                document.getElementById('password').classList.add("is-invalid");
+                                error = 1
+                                document.getElementById('errormssg').innerHTML = "Please fill in all the details"
+                            } else {
+                                document.getElementById('password').classList.add("is-valid");
+                            }
+                            if (this.password1 === "") {
+                                document.getElementById('password1').classList.add("is-invalid");
+                                error = 1
+                                document.getElementById('errormssg').innerHTML = "Please fill in all the details"
+                            } else {
+                                document.getElementById('password1').classList.add("is-valid");
+                            }
+                            if (error === 1) {
+                                return
+                            }
+                            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                            if (document.getElementById('userName').value.match(mailformat))
+                            {
+
+                            } else {
+                                document.getElementById('userName').classList.add("is-invalid");
+                                alert("invalid email address!");
+                                return;
+                            }
+                            
+                            if (this.password.length < 7) {
+                                document.getElementById('password').classList.add("is-invalid");
+                                
+                                document.getElementById('errormssg').innerHTML = "Password lenght should be above 7"
+                            }
+                            
+                            axios
+                                    .post('/postregisteruser', {
+                                        firstName: this.firstName,
+                                        lastName: this.lastName,
+                                        userName: this.userName,
+                                        password: this.password,
+                                    })
+                                    .then(function (response) {
+                                        alert(response.data)
+                                        document.location = 'login'
+                                    })
+                                    .catch(function (error) {
+                                        console.log(error);
+                                    });
+                        } else
+                            document.getElementById('password1').classList.add("is-invalid");
+                        document.getElementById('password').classList.add("is-invalid");
+                        document.getElementById('errormssg').innerHTML = "Password must match";
+                    },
+                },
+            })
+
+        </script>
+
+    </body>
+
+</html>

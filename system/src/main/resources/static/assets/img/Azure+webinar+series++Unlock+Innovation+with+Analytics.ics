@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+METHOD:PUBLISH
+PRODID:-//Microsoft Corporation//Outlook 11.0 MIMEDIR//EN
+BEGIN:VEVENT
+UID:9074638f793f37469
+DTSTAMP:20221206T171751Z
+DTSTART:20221206T180000Z
+DTEND:20221206T190000Z
+SUMMARY:Azure webinar series : Unlock Innovation with Analytics
+LOCATION:Webinar
+DESCRIPTION:https://event.on24.com/interface/registration/autoreg/index.html?eventid=3998107&sessionid=1&key=3FD3759D4C3D80F92F50425703EA629D&email=gumbogarnnet@gmail.com\n\nAs businesses continue to invest in modernizing their data infrastructure\, a new architectural vision has gained traction. Modern analytics and governance in the Microsoft Intelligent Data Platform (MIDP)\, Microsoft’s hybrid approach to data mesh and data fabric\, helps organizations build an enduring data foundation and then operationalize their end-to-end analytics ecosystem.\n\nJoin our webinar\, Unlock Innovation with Analytics\, to learn how the MIDP pulls together key capabilities to help you:  \n - Focus on business value creation by empowering your lines of business through analytics federation—so teams can self-serve the data and analytics they need to generate their own business insights.\n - Implement effective data management and governance to reduce data duplication\, enable ease of access to relevant data\, and improve data quality.\n - Improve time to insight by leveraging automation and removing redundant data engineering work across your company.\n - Drive cost efficiency by reducing infrastructure and data process complexity.\n\nAs part of this webinar\, Canada Life’s VP of Data James Ki will share the company’s implementation of this vision—modern analytics and governance at scale—to bring about a hybrid approach to data mesh and data fabric. James will talk through Canada Life’s journey to unlock business value with a modernized data and analytics ecosystem.
+END:VEVENT
+END:VCALENDAR
