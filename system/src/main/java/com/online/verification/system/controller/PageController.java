@@ -20,6 +20,14 @@ public class PageController {
     public String dashboard() {
         return "dashboard";
     }
+    @GetMapping("preliminary_examination")
+    public String preliminary_examination() {
+        return "preliminary_examination";
+    }
+    @GetMapping("final_examination")
+    public String final_examination() {
+        return "final_examination";
+    }
     @GetMapping("diagram")
     public String diagram() {
         return "diagram";

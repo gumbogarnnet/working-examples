@@ -29,6 +29,8 @@
         <!-- Nucleo Icons -->
         <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
         <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
         <!-- Font Awesome Icons -->
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
         <!-- Material Icons -->
@@ -38,7 +40,7 @@
     </head>
 
     <body class="g-sidenav-show  bg-gray-200">
-         <aside
+        <aside
             class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
             id="sidenav-main">
             <div class="sidenav-header">
@@ -157,7 +159,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                    <input type="checkbox" v-model="wp1" v-on:click="postworkplan()" class="custom-control-input" id="customSwitch1">
                                                 </td>
 
                                             </tr>
@@ -173,7 +175,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="wp2" v-on:click="postworkplan()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -190,7 +192,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="wp3" v-on:click="postworkplan()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -207,7 +209,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="wp4" v-on:click="postworkplan()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -224,7 +226,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="wp5" v-on:click="postworkplan()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -241,7 +243,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="wp6" v-on:click="postworkplan()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -258,7 +260,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="wp7" v-on:click="postworkplan()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -275,7 +277,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="wp8" v-on:click="postworkplan()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -292,7 +294,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="wp9" v-on:click="postworkplan()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -309,7 +311,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="wp10" v-on:click="postworkplan()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -320,6 +322,57 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="container-fluid py-4">
+
+
+                        <div class="row mb-4" >
+                            <div class="col-lg-12 col-md-12 mb-md-0 mb-12" >
+                                <div class="card">
+
+                                    <div class='row'>
+                                        <div class="col-lg-3 col-md-3 mb-md-2 mb-3" v-for="files in files">
+                                            <div class="card" data-animation="true">
+                                                <div class="card-header p-3 position-relative mt-n4 mx-3 z-index-2">
+                                                    <a class="d-block blur-shadow-image">
+                                                        <img src="/assets/img/photo-1562654501-a0ccc0fc3fb1.jpeg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg"/>
+                                                        <!--<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdocument&psig=AOvVaw0FwKmVtCweFlbftKNqtOJI&ust=1670922289250000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCMCC7d3c8_sCFQAAAAAdAAAAABAE" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">-->
+                                                    </a>
+
+                                                    <div class="colored-shadow" style="background-image: url('/assets/img/photo-1562654501-a0ccc0fc3fb1.jpeg');"></div>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <div class="d-flex mt-n6 mx-auto">
+                                                        <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="delete">
+                                                            <i class="material-icons text-lg" v-on:click="deletefile(files.id)">delete</i>
+                                                        </a>
+                                                        <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"  data-bs-placement="bottom" title="download">
+                                                            <i class="material-icons text-lg" v-on:click="download(files.id)">download</i>
+                                                        </button>
+                                                    </div>
+
+                                                    <p class="mb-0">
+                                                        {{files.id}}
+                                                        {{files.fileName}}
+                                                    </p>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
                     </div>
 
                 </div>
@@ -415,6 +468,7 @@
         <script src="../assets/js/core/bootstrap.min.js"></script>
         <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
         <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+        <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
         <script>
                                 var win = navigator.platform.indexOf('Win') > -1;
                                 if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -446,32 +500,92 @@
                 el: '#app',
                 data() {
                     return {
-                        records: "",
-                        landSurveyor: "",
-                        district: "",
-                        dateUploaded: "",
-                        id: id
 
+                        id: id,
+                        wpId: "",
+                        wp1: false,
+                        wp2: false,
+                        wp3: false,
+                        wp4: false,
+                        wp5: false,
+                        wp6: false,
+                        wp7: false,
+                        wp8: false,
+                        wp9: false,
+                        wp10: false,
+                        wp: "",
+                        files: "",
                     }
                 },
                 methods: {
+                    download(fileid) {
 
-                    getrecordsbysearch() {
                         axios
-                                .get('/getrecordsbysearch?landSurveyor=' + this.landSurveyor + '&district=' + this.district + '&dateUploaded=' + this.dateUploaded)
-                                .then(response => (this.records = response.data))
+                                .get('/download/' + fileid)
+
+
+
                     },
-                    getallRecords() {
+                    getfilesid() {
+
                         axios
-                                .get('/getallrecords')
-                                .then(response => (this.records = response.data))
+                                .get('/getfilesbyrecordid/' + id)
+                                .then(response => (
+                                            this.files = response.data
+                                            ));
+
+
+                    },
+
+                    getworkplan() {
+                        axios
+                                .get('/getworkplan/' + id)
+                                .then(response => (
+                                            this.wp = response.data,
+                                            console.log(JSON.stringify(this.wp.id)),
+                                            this.wpId = this.wp.id,
+                                            console.log(JSON.stringify(this.wpId)),
+                                            this.wp1 = this.wp.wp1,
+                                            this.wp2 = this.wp.wp2,
+                                            this.wp3 = this.wp.wp3,
+                                            this.wp4 = this.wp.wp4,
+                                            this.wp5 = this.wp.wp5,
+                                            this.wp6 = this.wp.wp6,
+                                            this.wp7 = this.wp.wp7,
+                                            this.wp8 = this.wp.wp8,
+                                            this.wp9 = this.wp.wp9,
+                                            this.wp10 = this.wp.wp10
+                                            ))
+
+                    },
+                    postworkplan() {
+                        axios
+                                .post('/postworkplan', {
+
+                                    id: this.wpId,
+                                    recordId: id,
+                                    wp1: this.wp1,
+                                    wp2: this.wp2,
+                                    wp3: this.wp3,
+                                    wp4: this.wp4,
+                                    wp5: this.wp5,
+                                    wp6: this.wp6,
+                                    wp7: this.wp7,
+                                    wp8: this.wp8,
+                                    wp9: this.wp9,
+                                    wp10: this.wp10
+                                })
+                                .then(response => (
+                                         this.wpId=response.data.id
+                                            ));
 
                     }
 
                 },
                 mounted: function () {
 
-                    this.getallRecords();
+                    this.getworkplan();
+                    this.getfilesid();
 
                 }
 

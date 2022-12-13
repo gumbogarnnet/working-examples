@@ -5,14 +5,21 @@
  */
 package com.online.verification.system.controller;
 
+import com.online.verification.system.entity.Diagram;
+import com.online.verification.system.entity.FieldNotes;
 import com.online.verification.system.entity.Files;
 import com.online.verification.system.entity.Record;
+import com.online.verification.system.entity.WorkPlan;
+import com.online.verification.system.service.DDao;
 import com.online.verification.system.service.FilesDao;
+import com.online.verification.system.service.FnDao;
 import com.online.verification.system.service.RecordDao;
+import com.online.verification.system.service.WkDao;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +32,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -41,6 +49,12 @@ public class RecordController {
     RecordDao recordDao;
     @Autowired
     FilesDao filesDao;
+    @Autowired
+    DDao dDao;
+    @Autowired
+    FnDao fnDao;
+    @Autowired
+    WkDao wkDao;
 
     @GetMapping("/download/{id}")
     @Transactional
@@ -50,7 +64,7 @@ public class RecordController {
 
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(files.getFileType()))
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + files.getFileName()+ "\"")
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + files.getFileName() + "\"")
                 .body(new ByteArrayResource(files.getFile()));
 
     }
@@ -76,6 +90,7 @@ public class RecordController {
         filesDao.deleteById(fileid);
 
     }
+
     @GetMapping("/deleteproject/{projectid}")
     public void deleteproject(
             @PathVariable Integer projectid
@@ -163,7 +178,45 @@ public class RecordController {
 
     @GetMapping("getallrecords")
     public List<Record> getAllRecords() {
-        return recordDao.findAll();
+        List<Record> records = recordDao.findAll();
+        if (records == null) {
+            return null;
+        }
+        return records.stream().map(r -> new Record(dDao.findByRecordId(r.getId()), r, fnDao.findByRecordId(r.getId().longValue()),wkDao.findByRecordId(r.getId()))).collect(Collectors.toList());
+
+    }
+
+    @GetMapping("getfieldnotes/{recordid}")
+    public FieldNotes getfieldnotes(@PathVariable Integer recordid) {
+        FieldNotes fieldNotes = fnDao.findByRecordId(recordid.longValue());
+        return fieldNotes == null ? new FieldNotes() : fieldNotes;
+    }
+
+    @PostMapping("postfieldnotes")
+    public FieldNotes postfieldnotes(@RequestBody FieldNotes fn) {
+        return fnDao.save(fn);
+    }
+
+    @GetMapping("getdiagram/{recordid}")
+    public Diagram getdiagram(@PathVariable Integer recordid) {
+        Diagram diagram = dDao.findByRecordId(recordid.longValue());
+        return diagram == null ? new Diagram() : diagram;
+    }
+
+    @PostMapping("postdiagram")
+    public Diagram postdiagram(@RequestBody Diagram d) {
+        return dDao.save(d);
+    }
+
+    @GetMapping("getworkplan/{recordid}")
+    public WorkPlan getworkplan(@PathVariable Integer recordid) {
+        WorkPlan wp = wkDao.findByRecordId(recordid.longValue());
+        return wp == null ? new WorkPlan() : wp;
+    }
+
+    @PostMapping("postworkplan")
+    public WorkPlan postworkplan(@RequestBody WorkPlan wp) {
+        return wkDao.save(wp);
     }
 
 }

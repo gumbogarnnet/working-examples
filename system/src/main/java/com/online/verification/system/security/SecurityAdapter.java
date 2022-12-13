@@ -55,11 +55,13 @@ public class SecurityAdapter extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/sign-up").permitAll()
                 .antMatchers("/sign-up.html").permitAll()
-                .antMatchers("/h2-console").permitAll()
+                .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/**/*.js").permitAll()
                 .antMatchers("/**/*.css").permitAll()
                 .antMatchers("/**/*.png").permitAll()

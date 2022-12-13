@@ -38,7 +38,7 @@
     </head>
 
     <body class="g-sidenav-show  bg-gray-200">
-         <aside
+        <aside
             class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
             id="sidenav-main">
             <div class="sidenav-header">
@@ -140,7 +140,7 @@
                         </div>
 
                         <button class="btn bg-gradient-success w-20 mb-0 toast-btn" type="button" v-on:click="getrecordsbysearch()">Search</button>
-                        
+
                     </div>
                 </div>
             </nav>
@@ -189,14 +189,14 @@
                                                     <p class="text-xs text-secondary mb-0">{{records.district}}</p>
                                                 </td>
                                                 <td class="align-middle text-center text-sm">
-                                                    <span class="badge badge-sm bg-gradient-success">{{records.status === null ? "PENDING" : "COMPLETE"}}</span>
+                                                    <span class="badge badge-sm bg-gradient-success">{{records.status}}</span>
                                                 </td>
                                                 <td class="align-middle text-center">
                                                     <span class="text-secondary text-xs font-weight-bold">{{records.dateUploaded}}</span>
                                                 </td>
                                                 <td class="align-middle">
                                                     <a :href="'working_plan?id='+records.id" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                                                       data-original-title="Edit user">
+                                                        data-original-title="Edit user">
                                                         Examine Record
                                                     </a>
                                                 </td>

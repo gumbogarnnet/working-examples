@@ -38,7 +38,7 @@
     </head>
 
     <body class="g-sidenav-show  bg-gray-200">
-         <aside
+        <aside
             class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
             id="sidenav-main">
             <div class="sidenav-header">
@@ -157,7 +157,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                    <input type="checkbox" v-model="fn1"  v-on:change="postfieldnotes()" class="custom-control-input" id="customSwitch1">
                                                 </td>
 
                                             </tr>
@@ -173,7 +173,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="fn2" v-on:change="postfieldnotes()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -190,7 +190,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="fn3" v-on:change="postfieldnotes()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -207,7 +207,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="fn4" v-on:change="postfieldnotes()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -224,7 +224,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="fn5" v-on:change="postfieldnotes()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -241,7 +241,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="fn6" v-on:change="postfieldnotes()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -258,7 +258,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="fn7" v-on:change="postfieldnotes()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -275,7 +275,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="fn8" v-on:change="postfieldnotes()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -292,7 +292,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="fn9" v-on:change="postfieldnotes()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -309,7 +309,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="custom-control custom-switch">
-                                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                                        <input type="checkbox" v-model="fn10" v-on:change="postfieldnotes()" class="custom-control-input" id="customSwitch1">
                                                     </div><div></div>
                                                 </td>
 
@@ -323,6 +323,56 @@
                     </div>
 
                 </div>
+
+            </div>
+            <div class="container-fluid py-4">
+
+
+                <div class="row mb-4" >
+                    <div class="col-lg-12 col-md-12 mb-md-0 mb-12" >
+                        <div class="card">
+
+                            <div class='row'>
+                                <div class="col-lg-3 col-md-3 mb-md-2 mb-3" v-for="files in files">
+                                    <div class="card" data-animation="true">
+                                        <div class="card-header p-3 position-relative mt-n4 mx-3 z-index-2">
+                                            <a class="d-block blur-shadow-image">
+                                                <img src="/assets/img/photo-1562654501-a0ccc0fc3fb1.jpeg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg"/>
+                                                <!--<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fdocument&psig=AOvVaw0FwKmVtCweFlbftKNqtOJI&ust=1670922289250000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCMCC7d3c8_sCFQAAAAAdAAAAABAE" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">-->
+                                            </a>
+
+                                            <div class="colored-shadow" style="background-image: url('/assets/img/photo-1562654501-a0ccc0fc3fb1.jpeg');"></div>
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <div class="d-flex mt-n6 mx-auto">
+                                                <a class="btn btn-link text-primary ms-auto border-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="delete">
+                                                    <i class="material-icons text-lg" v-on:click="deletefile(files.id)">delete</i>
+                                                </a>
+                                                <button class="btn btn-link text-info me-auto border-0" data-bs-toggle="tooltip"  data-bs-placement="bottom" title="download">
+                                                    <i class="material-icons text-lg "v-on:click="download(files.id)">download</i>
+                                                </button>
+                                            </div>
+
+                                            <p class="mb-0">
+                                                {{files.id}}
+                                                {{files.fileName}}
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
 
             </div>
         </main>
@@ -416,19 +466,19 @@
         <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
         <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
         <script>
-                      var win = navigator.platform.indexOf('Win') > -1;
-                      if (win && document.querySelector('#sidenav-scrollbar')) {
-                          var options = {
-                              damping: '0.5'
-                          }
-                          Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-                      }
+                                var win = navigator.platform.indexOf('Win') > -1;
+                                if (win && document.querySelector('#sidenav-scrollbar')) {
+                                    var options = {
+                                        damping: '0.5'
+                                    }
+                                    Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+                                }
         </script>
         <!-- Github buttons -->
         <script async defer src="https://buttons.github.io/buttons.js"></script>
         <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
         <script src="../assets/js/material-dashboard.min.js?v=3.0.4"></script>
-        
+
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
         <script>
@@ -446,33 +496,90 @@
                 el: '#app',
                 data() {
                     return {
-                        records: "",
-                        landSurveyor: "",
-                        district: "",
-                        dateUploaded: "",
-                        id: id
+
+                        id: id,
+                        fnId: "",
+                        fn1: false,
+                        fn2: false,
+                        fn3: false,
+                        fn4: false,
+                        fn5: false,
+                        fn6: false,
+                        fn7: false,
+                        fn8: false,
+                        fn9: false,
+                        fn10: false,
+                        fn: "",
+                        files: ""
 
                     }
                 },
                 methods: {
+                    download(fileid) {
 
-                    getrecordsbysearch() {
                         axios
-                                .get('/getrecordsbysearch?landSurveyor=' + this.landSurveyor + '&district=' + this.district + '&dateUploaded=' + this.dateUploaded)
-                                .then(response => (this.records = response.data))
+                                .get('/download/' + fileid)
+
+
+
                     },
-                    getallRecords() {
+                    getfilesid() {
+
                         axios
-                                .get('/getallrecords')
-                                .then(response => (this.records = response.data))
+                                .get('/getfilesbyrecordid/' + id)
+                                .then(response => (
+                                            this.files = response.data
+                                            ));
+
+
+                    },
+                    getfieldnotes() {
+                        axios
+                                .get('/getfieldnotes/' + id)
+                                .then(response => (
+                                            this.fn = response.data,
+                                            this.fnId = this.fn.id,
+                                            this.fn1 = this.fn.fn1,
+                                            this.fn2 = this.fn.fn2,
+                                            this.fn3 = this.fn.fn3,
+                                            this.fn4 = this.fn.fn4,
+                                            this.fn5 = this.fn.fn5,
+                                            this.fn6 = this.fn.fn6,
+                                            this.fn7 = this.fn.fn7,
+                                            this.fn8 = this.fn.fn8,
+                                            this.fn9 = this.fn.fn9,
+                                            this.fn10 = this.fn.fn10
+                                            ))
+
+                    },
+                    postfieldnotes() {
+                        axios
+                                .post('/postfieldnotes', {
+
+                                    id: this.fnId,
+                                    recordId: id,
+                                    fn1: this.fn1,
+                                    fn2: this.fn2,
+                                    fn3: this.fn3,
+                                    fn4: this.fn4,
+                                    fn5: this.fn5,
+                                    fn6: this.fn6,
+                                    fn7: this.fn7,
+                                    fn8: this.fn8,
+                                    fn9: this.fn9,
+                                    fn10: this.fn10
+                                })
+                                .then(response => (
+                                            this.fnId = response.data.id
+                                            ))
 
                     }
 
                 },
                 mounted: function () {
 
-                    this.getallRecords();
-
+                    this.getfilesid();
+                    this.getfieldnotes();
                 }
 
 
