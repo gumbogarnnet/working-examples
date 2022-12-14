@@ -8,11 +8,15 @@ package com.online.verification.system.controller;
 import com.online.verification.system.entity.Diagram;
 import com.online.verification.system.entity.FieldNotes;
 import com.online.verification.system.entity.Files;
+import com.online.verification.system.entity.FinalExamination;
+import com.online.verification.system.entity.PreliminaryExamination;
 import com.online.verification.system.entity.Record;
 import com.online.verification.system.entity.WorkPlan;
 import com.online.verification.system.service.DDao;
+import com.online.verification.system.service.FeDao;
 import com.online.verification.system.service.FilesDao;
 import com.online.verification.system.service.FnDao;
+import com.online.verification.system.service.PeDao;
 import com.online.verification.system.service.RecordDao;
 import com.online.verification.system.service.WkDao;
 import java.io.IOException;
@@ -55,6 +59,10 @@ public class RecordController {
     FnDao fnDao;
     @Autowired
     WkDao wkDao;
+    @Autowired
+    PeDao peDao;
+    @Autowired
+    FeDao feDao;
 
     @GetMapping("/download/{id}")
     @Transactional
@@ -217,6 +225,26 @@ public class RecordController {
     @PostMapping("postworkplan")
     public WorkPlan postworkplan(@RequestBody WorkPlan wp) {
         return wkDao.save(wp);
+    }
+    @GetMapping("getfinalexamination/{recordid}")
+    public FinalExamination getfinalexamination(@PathVariable Integer recordid) {
+        FinalExamination fe= feDao.findByRecordId(recordid);
+        return fe == null ? new FinalExamination() : fe;
+    }
+
+    @PostMapping("postfinalexamination")
+    public FinalExamination postfinalexamination(@RequestBody FinalExamination fe) {
+        return feDao.save(fe);
+    }
+    @GetMapping("getpreliminaryexamination/{recordid}")
+    public PreliminaryExamination getpreliminaryexamination(@PathVariable Integer recordid) {
+        PreliminaryExamination pe= peDao.findByRecordId(recordid);
+        return pe == null ? new PreliminaryExamination(): pe;
+    }
+
+    @PostMapping("postpreliminary")
+    public PreliminaryExamination postpreliminaryexamination(@RequestBody PreliminaryExamination pe) {
+        return peDao.save(pe);
     }
 
 }

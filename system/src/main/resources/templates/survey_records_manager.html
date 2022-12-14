@@ -167,6 +167,8 @@
                                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                     Survey Date</th>
                                                 <th class="text-secondary opacity-7"></th>
+                                                <th class="text-secondary opacity-7"></th>
+                                                <th class="text-secondary opacity-7"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -198,6 +200,18 @@
                                                     <a :href="'working_plan?id='+records.id" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
                                                         data-original-title="Edit user">
                                                         Examine Record
+                                                    </a>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a :href="'preliminary_examination?id='+records.id" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                        data-original-title="Edit user">
+                                                        Preliminary Examination
+                                                    </a>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <a :href="'final_examination?id='+records.id" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                        data-original-title="Edit user">
+                                                        Final Examination
                                                     </a>
                                                 </td>
                                             </tr>

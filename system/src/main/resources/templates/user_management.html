@@ -33,7 +33,6 @@
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
         <!-- Material Icons -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
         <!-- CSS Files -->
         <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.4" rel="stylesheet" />
     </head>
@@ -105,243 +104,113 @@
             </div>
 
         </aside>
-        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg " id="app">
+        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
             <!-- Navbar -->
             <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
                  data-scroll="true">
                 <div class="container-fluid py-1 px-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="/">
-
-                                    Electronic Record Examination
-                                </a></li>
-                            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Survey Records Manager</li>
+                            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Department Of Surveyor General</a></li>
+                            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Electronic Record Examination </li>
                         </ol>
-                        <h6 class="font-weight-bolder mb-0">Final Examination</h6>
+                        <h6 class="font-weight-bolder mb-0">Dashboard</h6>
                     </nav>
+                    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
 
+
+                    </div>
                 </div>
             </nav>
             <!-- End Navbar -->
-            <div class="container-fluid py-4">
+            <div class="container-fluid py-4" id ="app">
 
 
-                <div class="row mb-4" >
+                <div class="row mb-4">
                     <div class="col-lg-12 col-md-12 mb-md-0 mb-12">
                         <div class="card">
                             <div class="card-header pb-0">
                                 <div class="row">
                                     <div class="col-lg-6 col-7">
-                                        <h6>Final Examination Report</h6>
+                                        <h6>User List </h6>
 
                                     </div>
+                                    <div class="col-lg-6 col-5 my-auto text-end">
+                                        <div class="dropdown float-lg-end pe-4">
+                                            <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-v text-secondary"></i>
+                                            </a>
+                                            <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
+                                                <li><a class="dropdown-item border-radius-md" href="create-project">Add New</a></li>
 
-                                </div>
-                            </div>
-                            <div class="card-body px-4 pb-2">
-                                <p class='text-primary' id='errormssg'></p>
-
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <div class="input-group input-group-static  my-3">
-                                            <label >Government Instructed  </label>
-
-                                            <textarea class="form-control"></textarea>
+                                            </ul>
                                         </div>
                                     </div>
-
-
-
                                 </div>
-
-                                <div class="col-md-6">
-                                    <div class="input-group input-group-static  my-3">
-                                        <label class="form-label">Description</label>
-                                        <input type="text" v-model="district" id='district' class="form-control">
-                                    </div>
-                                </div>
-
-
-                                <table class="table align-items-center mb-0">
-
-                                    <tbody>
-                                        <tr >
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Office copy permit submited by L.P.A </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Report accepted ?</label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Adopted co-ordinates acceptable </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Property identification </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Alignment strategy </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Comparison made with previous records </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">survey records with planning approved  </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label"> Beacons correctly placed and checked   </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Beacons conform to regulations  </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label"> Cross reference satisfactory   </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Beacon Apparently tested </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label"> Beacon agreement from scrutiny   </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Beacon receipt checked  </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label"> Account Checked </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr >
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Diagram and G.P of previous survey canceled if necessary  </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="col-md-12">
-                                                    <div class="input-group input-group-outline  my-3">
-                                                        <label class="form-label">Permits submitted by Suveryor </label>
-                                                        <input type="text"  id='district' class="form-control">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                  
-
-                                    </tr>
-
-
-
-
-
-                                    </tbody>
-                                </table>
-
-                                <hr/>
-                                <h5>Remarks</h5>
-
-
-                                <div class="input-group input-group-outline  my-3">
-                                    <!--                                    <label class="form-label"> Check list completed and signed  </label>-->
-                                    <textarea class="form-control"></textarea>
-                                </div>
-
-
-
                             </div>
+                            <div class="card-body px-0 pb-2">
+                                <div class="table-responsive">
+                                    <table class="table align-items-center mb-0">
+                                        <thead>
+                                            <tr>
+
+                                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ID #</th>
+
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                    NAME </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">EMAIL </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> ACTIVE STATUS </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Account Type </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="mt-3">
+                                            <tr v-for="records in records">
+
+                                                <td>
+                                                    <h6 class="mb-0 text-sm">{{records.id}}</h6>
+                                                </td>
+                                                <td class="align-middle text-center text-sm">
+                                                    <span class="text-xs font-weight-bold"> {{records.firstName}} </span>
+                                                </td>
+                                                <td class="align-middle text-center text-sm">
+                                                    <span class="text-xs font-weight-bold"> {{records.userName}}</span>
+                                                </td>
+
+                                                <td class="align-middle">
+                                                    <div class="progress-wrapper w-75 mx-auto">
+                                                        <div class="progress-info">
+                                                            <div class="progress-percentage">
+                                                                <span class="text-xs font-weight-bold">Active</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+                                                <td class="align-middle text-center text-sm">
+                                                    <div class="btn-group dropup mt-1">
+                                                        <button type="button" class="btn bg-gradient-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            Dropup
+                                                        </button>
+                                                        <ul class="dropdown-menu px-2 py-3" aria-labelledby="dropdownMenuButton">
+                                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Admin</a></li>
+                                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Surveyor</a></li>
+                                                            <li><a class="dropdown-item border-radius-md" href="javascript:;">Viewer</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
 
 
 
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-
-
-
 
             </div>
         </main>
@@ -427,7 +296,6 @@
             </div>
         </div>
         <!--   Core JS Files   -->
-        <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
         <script src="../assets/js/core/popper.min.js"></script>
         <script src="../assets/js/core/bootstrap.min.js"></script>
         <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -693,94 +561,41 @@
         <script async defer src="https://buttons.github.io/buttons.js"></script>
         <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
         <script src="../assets/js/material-dashboard.min.js?v=3.0.4"></script>
+
+
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
-        <script>
-            var formData = new FormData()
-        </script>
         <script>
             var app = new Vue({
                 el: '#app',
                 data() {
                     return {
-                        landSurveyor: "",
-
-                        surveyOf: "",
-                        district: "",
-
-                        dateUploaded: "",
-
-                        selectedFile: "",
-                        files: [],
-                        id: 0
+                        records: "",
 
                     }
                 },
                 methods: {
 
-                    uploadRecord() {
+                    getallRecords() {
+                        axios
+                                .get('/getallusers')
+                                .then(response => (this.records = response.data))
 
-                        var error = 0;
-
-                        if (this.landSurveyor === "") {
-                            document.getElementById('landSurveyor').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-
-                        } else {
-                            document.getElementById('landSurveyor').classList.add("is-valid");
-                        }
-                        if (this.surveyOf === "") {
-                            document.getElementById('surveyOf').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-                        } else {
-                            document.getElementById('surveyOf').classList.add("is-valid");
-                        }
-
-                        if (this.district === "") {
-                            document.getElementById('district').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-                        } else {
-                            document.getElementById('district').classList.add("is-valid");
-                        }
-                        if (this.dateUploaded === "") {
-                            document.getElementById('dateUploaded').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-                        } else {
-                            document.getElementById('dateUploaded').classList.add("is-valid");
-                        }
-
-                        if (error === 1) {
-                            return;
-                        }
-
-                        axios.post('/postrecord?landSurveyor=' + this.landSurveyor + '&surveyOf=' + this.surveyOf + '&district=' + this.district + '&dateUploaded=' + this.dateUploaded
-//                            
-//
-//                         
-//                                district: this.district,
-//                                dateUploaded: this.dateUploaded,
-
-
-                                ).then(response => (
-                                    console.log(this.landSurveyor),
-                                    console.log(this.surveyOf),
-                                    console.log(this.district),
-                                    this.id = response.data,
-                                    document.location = 'create-project_1?id=' + this.id
-
-                                    ))
-
-                    },
+                    }
 
                 },
+                mounted: function () {
+                    this.getallRecords();
+
+
+                }
+
 
             })
 
         </script>
+
+
     </body>
 
 </html>

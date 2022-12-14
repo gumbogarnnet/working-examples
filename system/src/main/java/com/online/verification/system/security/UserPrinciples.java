@@ -14,6 +14,7 @@ package com.online.verification.system.security;
 import com.online.verification.system.entity.User;
 import java.util.Collection;
 import java.util.Collections;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
@@ -23,6 +24,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  *
  * @author garnnet
  */
+@Data
 public class UserPrinciples implements UserDetails{
     
     private User user;
