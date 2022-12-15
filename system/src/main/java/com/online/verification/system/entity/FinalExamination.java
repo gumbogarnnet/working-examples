@@ -23,21 +23,24 @@ public class FinalExamination {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id = 0;
     private Long recordId = 0l;
-    private String fe1 ;
-    private String fe2 ;
-    private String fe3 ;
-    private String fe4 ;
-    private String fe5 ;
-    private String fe6 ;
-    private String fe7 ;
-    private String fe8 ;
-    private String fe9 ;
-    private String fe10 ;
-    private String fe11 ;
-    private String fe12 ;
-    private String fe13 ;
+    private String fe1;
+    private String fe2;
+    private String fe3;
+    private String fe4;
+    private String fe5;
+    private String fe6;
+    private String fe7;
+    private String fe8;
+    private String fe9;
+    private String fe10;
+    private String fe11;
+    private String fe12;
+    private String fe13;
     private String fe14;
-    private String fe15 ;
-    private String fe16 ;
-  
+    private String fe15;
+    private String fe16;
+    private String district;
+    private String purposeOfSurvey;
+    private String remarks;
+
 }

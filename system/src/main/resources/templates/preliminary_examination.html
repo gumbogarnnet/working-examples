@@ -55,7 +55,7 @@
             <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link text-white active bg-gradient-primary" href="/">
+                        <a class="nav-link text-white " href="/">
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="material-icons opacity-10">dashboard</i>
                             </div>
@@ -71,7 +71,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white " href="survey_records_manager">
+                        <a class="nav-link text-white active bg-gradient-info " href="survey_records_manager">
                             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i class="material-icons opacity-10">receipt_long</i>
                             </div>
@@ -147,7 +147,7 @@
                                         <div class="input-group input-group-static  my-3">
                                             <label >Description of property </label>
 
-                                            <textarea class="form-control"></textarea>
+                                            <textarea class="form-control" v-model="purposeOfSurvey"></textarea>
                                         </div>
                                     </div>
 
@@ -171,7 +171,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Field book,pages dated, <strong>Descrption date on cover</strong></label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe1"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -179,7 +179,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Calculations co-ordinates list in alphebetic order and cross referenced ,consistency check ,comparison check</label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="pe2" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -189,7 +189,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Report signed and dated </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"v-model="pe3"   id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -197,7 +197,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">working and or river plan size certificate,date and signature </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe4"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -207,7 +207,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Planning Approval lodged and still in force </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe5"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -215,7 +215,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Office copy of Planning Approval envelope  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe6"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -225,7 +225,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">survey records with planning approved  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe7"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -233,7 +233,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label"> Survey records with  government instruction Attached  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="pe8" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -243,7 +243,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Should Survey be based on trig stations or TSMs  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="pe9" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -251,7 +251,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label"> Alignment apparently tested  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe10" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -261,7 +261,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Beacon Apparently tested </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="pe11" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -269,7 +269,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label"> Check list completed and signed  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="pe12" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -279,7 +279,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">DEEDS REQUIRED FOR TESTING or convesion logged </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="pe13" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -287,7 +287,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label"> All necessary documents lodged </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="pe14" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -297,7 +297,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">file numbers checked </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="pe15" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -305,7 +305,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Examination stamps received and cancelled </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe16"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -315,7 +315,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Plot at Scale required by Drawing office submitted  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe17"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -323,7 +323,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Signed Certificate of correctness submitted  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe18" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -333,7 +333,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">survey within the Greater Harare Bulawayo Area  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe19"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -341,7 +341,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label"> is survey within the Harare/Bulawayo Electric supply area  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe20"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -351,7 +351,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Consistency checks on copy of G.P shown  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe21"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -359,7 +359,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label"> Dispensation certificate submitted  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="pe22"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -376,15 +376,20 @@
 
 
                                 <div class="input-group input-group-outline  my-3">
-<!--                                    <label class="form-label"> Check list completed and signed  </label>-->
-                                    <textarea class="form-control"></textarea>
+                                    <!--                                    <label class="form-label"> Check list completed and signed  </label>-->
+                                    <textarea class="form-control" v-model="remarks"></textarea>
                                 </div>
 
 
 
                             </div>
 
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <input type="submit" value="Finish" v-on:click="postPreliminaryExam()" class="btn btn-outline-success"/>
 
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -744,90 +749,156 @@
         <script async defer src="https://buttons.github.io/buttons.js"></script>
         <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
         <script src="../assets/js/material-dashboard.min.js?v=3.0.4"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
         <script>
             var formData = new FormData()
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+                    function (m, key, value) {
+                        vars[key] = value;
+                    });
+            console.log(vars['id']);
+            const id = vars['id'];
         </script>
         <script>
             var app = new Vue({
                 el: '#app',
                 data() {
                     return {
-                        landSurveyor: "",
-
-                        surveyOf: "",
                         district: "",
 
-                        dateUploaded: "",
+                        purposeOfSurvey: "",
+                        remarks: "",
 
-                        selectedFile: "",
-                        files: [],
-                        id: 0
-
+                        id: id,
+                        peId: "",
+                        pe1: "",
+                        pe2: "",
+                        pe3: "",
+                        pe4: "",
+                        pe5: "",
+                        pe6: "",
+                        pe7: "",
+                        pe8: "",
+                        pe9: "",
+                        pe10: "",
+                        pe11: "",
+                        pe12: "",
+                        pe13: "",
+                        pe14: "",
+                        pe15: "",
+                        pe16: "",
+                        pe17: "",
+                        pe18: "",
+                        pe19: "",
+                        pe20: "",
+                        pe21: "",
+                        pe22: "",
+                        pe: "",
+                        files: ""
                     }
                 },
                 methods: {
+                    download(fileid) {
 
-                    uploadRecord() {
-
-                        var error = 0;
-
-                        if (this.landSurveyor === "") {
-                            document.getElementById('landSurveyor').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-
-                        } else {
-                            document.getElementById('landSurveyor').classList.add("is-valid");
-                        }
-                        if (this.surveyOf === "") {
-                            document.getElementById('surveyOf').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-                        } else {
-                            document.getElementById('surveyOf').classList.add("is-valid");
-                        }
-
-                        if (this.district === "") {
-                            document.getElementById('district').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-                        } else {
-                            document.getElementById('district').classList.add("is-valid");
-                        }
-                        if (this.dateUploaded === "") {
-                            document.getElementById('dateUploaded').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-                        } else {
-                            document.getElementById('dateUploaded').classList.add("is-valid");
-                        }
-
-                        if (error === 1) {
-                            return;
-                        }
-
-                        axios.post('/postrecord?landSurveyor=' + this.landSurveyor + '&surveyOf=' + this.surveyOf + '&district=' + this.district + '&dateUploaded=' + this.dateUploaded
-//                            
-//
-//                         
-//                                district: this.district,
-//                                dateUploaded: this.dateUploaded,
+                        axios
+                                .get('/download/' + fileid)
 
 
-                                ).then(response => (
-                                    console.log(this.landSurveyor),
-                                    console.log(this.surveyOf),
-                                    console.log(this.district),
-                                    this.id = response.data,
-                                    document.location = 'create-project_1?id=' + this.id
 
-                                    ))
+                    },
+                    getfilesid() {
+
+                        axios
+                                .get('/getfilesbyrecordid/' + id)
+                                .then(response => (
+                                            this.files = response.data
+                                            ));
+
 
                     },
 
+                    getPreliminaryExam() {
+                        axios
+                                .get('/getpreliminaryexamination/' + id)
+                                .then(response => (
+                                            this.pe = response.data,
+                                            this.district = this.pe.district,
+                                            this.purposeOfSurvey = this.pe.purposeOfSurvey,
+                                            this.remarks = this.pe.remarks,
+                                            this.peId = this.pe.id,
+                                            this.pe1 = this.pe.pe1,
+                                            this.pe2 = this.pe.pe2,
+                                            this.pe3 = this.pe.pe3,
+                                            this.pe4 = this.pe.pe4,
+                                            this.pe5 = this.pe.pe5,
+                                            this.pe6 = this.pe.pe6,
+                                            this.pe7 = this.pe.pe7,
+                                            this.pe8 = this.pe.pe8,
+                                            this.pe9 = this.pe.pe9,
+                                            this.pe10 = this.pe.pe10,
+                                            this.pe11 = this.pe.pe11,
+                                            this.pe12 = this.pe.pe12,
+                                            this.pe13 = this.pe.pe13,
+                                            this.pe14 = this.pe.pe14,
+                                            this.pe15 = this.pe.pe15,
+                                            this.pe16 = this.pe.pe16,
+                                            this.pe17 = this.pe.pe17,
+                                            this.pe18 = this.pe.pe18,
+                                            this.pe19 = this.pe.pe19,
+                                            this.pe20 = this.pe.pe20,
+                                            this.pe21 = this.pe.pe21
+                                            ))
+
+                    },
+                    postPreliminaryExam() {
+                        axios
+                                .post('/postpreliminary', {
+
+                                    id: this.peId,
+                                    recordId: id,
+                                    pe1: this.pe1,
+                                    pe2: this.pe2,
+                                    pe3: this.pe3,
+                                    pe4: this.pe4,
+                                    pe5: this.pe5,
+                                    pe6: this.pe6,
+                                    pe7: this.pe7,
+                                    pe8: this.pe8,
+                                    pe9: this.pe9,
+                                    pe10: this.pe10,
+                                    pe11: this.pe11,
+                                    pe12: this.pe12,
+                                    pe13: this.pe13,
+                                    pe14: this.pe14,
+                                    pe15: this.pe15,
+                                    pe16: this.pe16,
+                                    pe17: this.pe17,
+                                    pe18: this.pe18,
+                                    pe19: this.pe19,
+                                    pe20: this.pe20,
+                                    pe21: this.pe21,
+                                    district: this.district,
+                                    purposeOfSurvey: this.purposeOfSurvey,
+                                    remarks: this.remarks
+                                })
+                                .then(response => (
+                                            this.peId = response.data.id,
+                                            document.location = 'survey_records_manager'
+                                            ))
+
+                    }
+
                 },
+                mounted: function () {
+
+                    this.getPreliminaryExam();
+                    this.getfilesid();
+
+                }
+
 
             })
 

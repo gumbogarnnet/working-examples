@@ -19,6 +19,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FeDao extends JpaRepository<FinalExamination, Integer>{
 
-    public FinalExamination findByRecordId(Integer longValue);
+    public FinalExamination findByRecordId(Long longValue);
     
 }

@@ -20,6 +20,14 @@ public class PageController {
     public String homePage() {
         return "index";
     }
+    @RequestMapping("/Field_Book")
+    public String FieldBook() {
+        return "Field_Book";
+    }
+    @RequestMapping("/Verify_details")
+    public String Verify_details() {
+        return "Verify_details";
+    }
     @RequestMapping("/view_record")
     public String viewRecord() {
         return "view_record";

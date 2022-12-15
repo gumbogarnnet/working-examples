@@ -190,7 +190,7 @@ public class RecordController {
         if (records == null) {
             return null;
         }
-        return records.stream().map(r -> new Record(dDao.findByRecordId(r.getId()), r, fnDao.findByRecordId(r.getId().longValue()),wkDao.findByRecordId(r.getId()))).collect(Collectors.toList());
+        return records.stream().map(r -> new Record(dDao.findByRecordId(r.getId()), r, fnDao.findByRecordId(r.getId().longValue()), wkDao.findByRecordId(r.getId()))).collect(Collectors.toList());
 
     }
 
@@ -226,9 +226,10 @@ public class RecordController {
     public WorkPlan postworkplan(@RequestBody WorkPlan wp) {
         return wkDao.save(wp);
     }
+
     @GetMapping("getfinalexamination/{recordid}")
     public FinalExamination getfinalexamination(@PathVariable Integer recordid) {
-        FinalExamination fe= feDao.findByRecordId(recordid);
+        FinalExamination fe = feDao.findByRecordId(recordid.longValue());
         return fe == null ? new FinalExamination() : fe;
     }
 
@@ -236,10 +237,12 @@ public class RecordController {
     public FinalExamination postfinalexamination(@RequestBody FinalExamination fe) {
         return feDao.save(fe);
     }
+
     @GetMapping("getpreliminaryexamination/{recordid}")
     public PreliminaryExamination getpreliminaryexamination(@PathVariable Integer recordid) {
-        PreliminaryExamination pe= peDao.findByRecordId(recordid);
-        return pe == null ? new PreliminaryExamination(): pe;
+
+        PreliminaryExamination pe = peDao.findByRecordId(recordid.longValue());
+        return pe == null ? new PreliminaryExamination() : pe;
     }
 
     @PostMapping("postpreliminary")

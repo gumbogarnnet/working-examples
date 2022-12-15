@@ -145,9 +145,9 @@
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="input-group input-group-static  my-3">
-                                            <label >Government Instructed  </label>
+                                            <label >Purpose Of Survey </label>
 
-                                            <textarea class="form-control"></textarea>
+                                            <textarea class="form-control" v-model="purposeOfSurvey"></textarea>
                                         </div>
                                     </div>
 
@@ -157,7 +157,7 @@
 
                                 <div class="col-md-6">
                                     <div class="input-group input-group-static  my-3">
-                                        <label class="form-label">Description</label>
+                                        <label class="form-label">District</label>
                                         <input type="text" v-model="district" id='district' class="form-control">
                                     </div>
                                 </div>
@@ -171,7 +171,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Office copy permit submited by L.P.A </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe1" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -179,7 +179,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Report accepted ?</label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe2"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -189,7 +189,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Adopted co-ordinates acceptable </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe3"  id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -197,7 +197,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Property identification </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe4" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -207,7 +207,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Alignment strategy </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe5" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -215,7 +215,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Comparison made with previous records </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="fe6" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -225,7 +225,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">survey records with planning approved  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="fe7" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -233,7 +233,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label"> Beacons correctly placed and checked   </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe8" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -243,7 +243,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Beacons conform to regulations  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe9" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -251,7 +251,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label"> Cross reference satisfactory   </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe10" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -261,7 +261,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Beacon Apparently tested </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe11" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -269,7 +269,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label"> Beacon agreement from scrutiny   </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe12" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -279,7 +279,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Beacon receipt checked  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="fe13" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -287,7 +287,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label"> Account Checked </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="fe14" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -297,7 +297,7 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Diagram and G.P of previous survey canceled if necessary  </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text" v-model="fe15" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
@@ -305,13 +305,13 @@
                                                 <div class="col-md-12">
                                                     <div class="input-group input-group-outline  my-3">
                                                         <label class="form-label">Permits submitted by Suveryor </label>
-                                                        <input type="text"  id='district' class="form-control">
+                                                        <input type="text"  v-model="fe16" id='district' class="form-control">
                                                     </div>
                                                 </div>
                                             </td>
-                                  
 
-                                    </tr>
+
+                                        </tr>
 
 
 
@@ -326,7 +326,7 @@
 
                                 <div class="input-group input-group-outline  my-3">
                                     <!--                                    <label class="form-label"> Check list completed and signed  </label>-->
-                                    <textarea class="form-control"></textarea>
+                                    <textarea class="form-control" v-model="remarks"></textarea>
                                 </div>
 
 
@@ -340,7 +340,12 @@
 
                 </div>
 
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <input type="submit" value="Finish" v-on:click="postfinalexamination()" class="btn btn-outline-success"/>
 
+                    </div>
+                </div>
 
 
             </div>
@@ -693,90 +698,134 @@
         <script async defer src="https://buttons.github.io/buttons.js"></script>
         <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
         <script src="../assets/js/material-dashboard.min.js?v=3.0.4"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
         <script>
             var formData = new FormData()
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+                    function (m, key, value) {
+                        vars[key] = value;
+                    });
+            console.log(vars['id']);
+            const id = vars['id'];
         </script>
         <script>
             var app = new Vue({
                 el: '#app',
                 data() {
                     return {
-                        landSurveyor: "",
-
-                        surveyOf: "",
                         district: "",
 
-                        dateUploaded: "",
+                        purposeOfSurvey: "",
+                        remarks: "",
 
-                        selectedFile: "",
-                        files: [],
-                        id: 0
-
+                        id: id,
+                        feId: "",
+                        fe1: "",
+                        fe2: "",
+                        fe3: "",
+                        fe4: "",
+                        fe5: "",
+                        fe6: "",
+                        fe7: "",
+                        fe8: "",
+                        fe9: "",
+                        fe10: "",
+                        fe11: "",
+                        fe12: "",
+                        fe13: "",
+                        fe14: "",
+                        fe15: "",
+                        fe16: "",
+                        fe17: "",
+                        fe18: "",
+                        fe19: "",
+                        fe20: "",
+                        fe21: "",
+                        fe22: "",
+                        fe: "",
+                        files: ""
                     }
                 },
                 methods: {
 
-                    uploadRecord() {
+                    getfinalexamination() {
+                        axios
+                                .get('/getfinalexamination/' + id)
+                                .then(response => (
+                                            this.fe = response.data,
+                                            this.district = this.fe.district,
+                                            this.purposeOfSurvey = this.fe.purposeOfSurvey,
+                                            this.remarks = this.fe.remarks,
+                                            this.feId = this.fe.id,
+                                            this.fe1 = this.fe.fe1,
+                                            this.fe2 = this.fe.fe2,
+                                            this.fe3 = this.fe.fe3,
+                                            this.fe4 = this.fe.fe4,
+                                            this.fe5 = this.fe.fe5,
+                                            this.fe6 = this.fe.fe6,
+                                            this.fe7 = this.fe.fe7,
+                                            this.fe8 = this.fe.fe8,
+                                            this.fe9 = this.fe.fe9,
+                                            this.fe10 = this.fe.fe10,
+                                            this.fe11 = this.fe.fe11,
+                                            this.fe12 = this.fe.fe12,
+                                            this.fe13 = this.fe.fe13,
+                                            this.fe14 = this.fe.fe14,
+                                            this.fe15 = this.fe.fe15,
+                                            this.fe16 = this.fe.fe16
 
-                        var error = 0;
-
-                        if (this.landSurveyor === "") {
-                            document.getElementById('landSurveyor').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-
-                        } else {
-                            document.getElementById('landSurveyor').classList.add("is-valid");
-                        }
-                        if (this.surveyOf === "") {
-                            document.getElementById('surveyOf').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-                        } else {
-                            document.getElementById('surveyOf').classList.add("is-valid");
-                        }
-
-                        if (this.district === "") {
-                            document.getElementById('district').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-                        } else {
-                            document.getElementById('district').classList.add("is-valid");
-                        }
-                        if (this.dateUploaded === "") {
-                            document.getElementById('dateUploaded').classList.add("is-invalid");
-                            error = 1;
-                            document.getElementById('errormssg').innerHTML = "Please fill in all the details";
-                        } else {
-                            document.getElementById('dateUploaded').classList.add("is-valid");
-                        }
-
-                        if (error === 1) {
-                            return;
-                        }
-
-                        axios.post('/postrecord?landSurveyor=' + this.landSurveyor + '&surveyOf=' + this.surveyOf + '&district=' + this.district + '&dateUploaded=' + this.dateUploaded
-//                            
-//
-//                         
-//                                district: this.district,
-//                                dateUploaded: this.dateUploaded,
-
-
-                                ).then(response => (
-                                    console.log(this.landSurveyor),
-                                    console.log(this.surveyOf),
-                                    console.log(this.district),
-                                    this.id = response.data,
-                                    document.location = 'create-project_1?id=' + this.id
-
-                                    ))
+                                            ))
 
                     },
+                    postfinalexamination() {
+                        axios
+                                .post('/postfinalexamination', {
+
+                                    id: this.feId,
+                                    recordId: id,
+                                    fe1: this.fe1,
+                                    fe2: this.fe2,
+                                    fe3: this.fe3,
+                                    fe4: this.fe4,
+                                    fe5: this.fe5,
+                                    fe6: this.fe6,
+                                    fe7: this.fe7,
+                                    fe8: this.fe8,
+                                    fe9: this.fe9,
+                                    fe10: this.fe10,
+                                    fe11: this.fe11,
+                                    fe12: this.fe12,
+                                    fe13: this.fe13,
+                                    fe14: this.fe14,
+                                    fe15: this.fe15,
+                                    fe16: this.fe16,
+                                    fe17: this.fe17,
+                                    fe18: this.fe18,
+                                    fe19: this.fe19,
+                                    fe20: this.fe20,
+                                    fe21: this.fe21,
+                                    district: this.district,
+                                    purposeOfSurvey: this.purposeOfSurvey,
+                                    remarks: this.remarks
+                                })
+                                .then(response => (
+                                            this.feId = response.data.id,
+                                            document.location = 'survey_records_manager'
+                                            ))
+
+                    }
 
                 },
+                mounted: function () {
+
+                    this.getfinalexamination();
+
+
+                }
+
 
             })
 

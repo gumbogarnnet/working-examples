@@ -177,33 +177,39 @@
 
                         <div class="card shadow mb-4" id="app" style="opacity: 0.97">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary"> Enter Record Details</h6>
+                                <h6 class="m-0 font-weight-bold text-primary"> Account Verification</h6>
                             </div>
                             <div class="card-body">
                                 <p class="text-danger" id="errormssg"></p>
                                 <div class="row ">
-                                    <div class="col-md-4">
-                                        <label for="validationCustom01" class="form-label">Survey Record Number</label>
-                                        <input type="text" class="form-control" id="validationCustom01"  required disabled>
 
+
+
+
+                                    <div class="col-md-5">
+                                        <label for="validationCustom02" class="form-label">Name</label>
+                                        <input type="text" v-model="assistant" class="form-control"  id="assistant" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label for="validationCustom02" class="form-label">Surname</label>
+                                        <input type="text" v-model="assistant" class="form-control"  id="assistant" required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
                                     </div>
 
-
-                                    <div class="col-md-4">
-                                        <label for="validationCustom02" class="form-label">Land Surveyor</label>
-                                        <select class="form-control" v-model = "landSurveyorId" id="landSurveyorId">
-
-                                            <option v-for="users in users"  :value="users.id">{{users.firstName+" "+users.lastName}}</option>
-
-                                        </select>
-
-
+                                    <div class="col-md-5">
+                                        <label for="validationCustom02" class="form-label">Company </label>
+                                        <input type="text" v-model="assistant" class="form-control"  id="assistant" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="validationCustom02" class="form-label">Assistant</label>
+                                    <div class="col-md-5">
+                                        <label for="validationCustom02" class="form-label">Email</label>
                                         <input type="text" v-model="assistant" class="form-control"  id="assistant" required>
                                         <div class="valid-feedback">
                                             Looks good!
@@ -212,98 +218,40 @@
 
                                 </div>
                                 <br>
+
+                                <hr>
+                                <div class="text-right col-md-9 col-9">
+                                    <button class="btn btn-outline-primary " type="submit" v-on:click="uploadRecord"  >Verify</button>
+                                </div>
+                                <hr>
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="validationCustom02" class="form-label">Second Assistant</label>
-                                        <input type="text" v-model="secondAssistant" class="form-control"  id="secondAssistant" required>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
+                                    <div class="col-md-5 text-center">
+                                        <label for="validationCustom02" class="form-label">License:</label>
+                                    </div>
+                                    <div class="col-md-5">
+
+                                        <span class="badge badge-success">Valid </span>
+
                                     </div>
 
                                 </div>
 
                                 <hr>
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="validationCustom02" class="form-label">Survey of </label>
-                                        <input type="text" v-model="surveyOf" class="form-control"  id="surveyOf" required>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
+                                    <div class="col-md-5 text-center">
+                                        <label for="validationCustom02" class="form-label">Registration Status</label>
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="validationCustom02" class="form-label">District</label>
-                                        <select class="form-control" v-model="districtId"  id="districtId">
+                                    <div class="col-md-5">
 
-                                            <option v-for="districts in districts"  :value="districts.id">{{districts.name}}</option>
-
-                                        </select>
+                                        <span class="badge badge-danger">Not Registered </span>
 
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="validationCustom02" class="form-label">Purpose</label>
-                                        <input type="text" v-model="purpose" class="form-control"  value="Otto" id="purpose" required>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
-                                    </div>
-
-
-
 
                                 </div>
+
+                                <hr>
                                 <br>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="validationCustom02" class="form-label">Date</label>
-                                        <input type="Date" v-model="dateUploaded" class="form-control" id="dateUploaded" value="Otto" required>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="validationCustom02" class="form-label">Diagram Number</label>
-                                        <input type="number" v-model="diagramNumber" class="form-control" id="diagramNumber" value="Otto" required>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div>
-                                    <div class="col-md-6">
-                                        <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
-                                        <textarea class="form-control" v-model="comments" id="comments" ></textarea>
-                                    </div>
-                                </div>
 
-
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label for="formFile" class="form-label">Beacon file </label>
-                                        <input class="form-control" @change="onFileChanged" type="file" id="1">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label for="formFile" class="form-label">Permit file</label>
-                                        <input class="form-control" @change="onFileChanged" type="file" id="2">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label for="formFile" class="form-label">Certificate file</label>
-                                        <input class="form-control" @change="onFileChanged" type="file" id="3">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label for="formFile" class="form-label">Instruments file</label>
-                                        <input class="form-control" @change="onFileChanged" type="file" id="4">
-                                    </div>
-                                </div>
-                                <hr>
-
-
-                                <div class="align-center">
-                                    <button class="btn btn-primary " type="submit" v-on:click="uploadRecord"  >Upload Record</button>
-                                </div>
 
                             </div>
                             <!--</div>-->
@@ -373,7 +321,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
         <script>
-var formData = new FormData()
+            var formData = new FormData()
         </script>
         <script>
             var app = new Vue({

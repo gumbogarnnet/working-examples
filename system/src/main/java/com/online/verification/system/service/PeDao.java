@@ -17,6 +17,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PeDao extends JpaRepository<PreliminaryExamination, Integer>{
 
-    public PreliminaryExamination findByRecordId(Integer longValue);
+    public PreliminaryExamination findByRecordId(Long m);
     
 }

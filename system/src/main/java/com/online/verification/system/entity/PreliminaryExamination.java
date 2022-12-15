@@ -45,4 +45,7 @@ public class PreliminaryExamination {
     private String pe20;
     private String pe22;
     private String pe21;
+    private String district;
+    private String purposeOfSurvey;
+    private String remarks;
 }
