@@ -10,3 +10,5 @@ quick recap
 
 Lesson 2 adding the image to dockerhub
 docker tag spring-boot-docker.jar ggumbo/spring-boot-docker.jar
+docker push  ggumbo/spring-boot-docker.jar
+docker pull  ggumbo/spring-boot-docker.jar
