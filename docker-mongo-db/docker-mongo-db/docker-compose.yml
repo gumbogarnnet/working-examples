@@ -1,0 +1,14 @@
+version: "3"
+services:
+  ggumbomongodb:
+    image: mongo:latest
+    container_name: "ggumbomongodb"
+    ports:
+      - 27017:27017
+  docker-mongo-db:
+    image: docker-mongo-db:1.0
+    container_name: docker-mongo-db
+    ports:
+      - 8080:8080
+    links:
+      - ggumbomongodb
