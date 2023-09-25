@@ -39,7 +39,7 @@
 -- 27017 port to mongo connection 
 
 
---database name <anyname>
+--database name anyname
 
 
 *bash*
