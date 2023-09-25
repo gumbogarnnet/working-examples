@@ -2,7 +2,7 @@
 
 
 
-*pull and run mongo container first*
+**pull and run mongo container first**
 
 
 -- docker pull mongo:latest 
@@ -11,7 +11,7 @@
 -- docker run -d -p 27017:27017 --name ggumbomongodb mongo:latest
 
 
-*build our jar file*
+**build our jar file**
 
 
 -- docker build -t  docker-mongo-db:1.0 .
@@ -20,7 +20,7 @@
 -- docker run -p 9090:8080 --name docker-mongo-db --link ggumbomongodb:mongo -d docker-mongo-db:1.0
 
 
-*checking the logs*
+**checking the logs**
 
 
 --docker logs ggumbomongodb
@@ -29,7 +29,7 @@
 --docker logs docker-mongo-db
 
 
-*ps*
+**ps**
 
 
 --docker-mongo-db finalname of our jarfile
@@ -44,7 +44,7 @@
 --database name anyname
 
 
-*bash*
+**bash**
 
 
  docker exec -it ggumbomongodb bash
