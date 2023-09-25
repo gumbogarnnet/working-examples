@@ -12,6 +12,8 @@
 
 
 *build our jar file*
+
+
 -- docker build -t  docker-mongo-db:1.0 .
 
 
